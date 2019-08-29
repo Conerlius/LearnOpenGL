@@ -135,12 +135,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="FirstGL.h" />
+    <ClInclude Include="ApplicationStart.h" />
+    <ClInclude Include="OpenGL_Session1.h" />
+    <ClInclude Include="OpenGL_Session2.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FirstGL.cpp" />
+    <ClCompile Include="ApplicationStart.cpp" />
+    <ClCompile Include="OpenGL_Session1.cpp" />
     <ClCompile Include="glad.c" />
-    <ClCompile Include="SecondGL.cpp" />
+    <ClCompile Include="OpenGL_Session2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GLSLFrame.fsh" />

@@ -1,35 +1,31 @@
-#include "FirstGL.h"
-#include <iostream>
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "OpenGL_Session1.h"
 
 using namespace std;
 
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void initGLFW();
-int drawWindow();
-void processInput(GLFWwindow* window);
-void drawView();
-
-int main()
+OpenGL_Session1::OpenGL_Session1() {
+}
+OpenGL_Session1::~OpenGL_Session1() {
+}
+int OpenGL_Session1::Start()
 {
-	initGLFW();
-	int result = drawWindow();
-	
-
+	this->initGLFW();
+	int result = this->drawWindow();
 	return result;
 }
+void OpenGL_Session1::framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+	// 设置窗口的维度
+	glViewport(0, 0, width, height);
+}
+
 // 初始化GLFW
-void initGLFW() { 
+void OpenGL_Session1::initGLFW() {
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 }
-// 画窗口
-int drawWindow() {
+int OpenGL_Session1::drawWindow() {
 
 	GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
 
@@ -60,20 +56,13 @@ int drawWindow() {
 	glfwTerminate();
 	return 0;
 }
-// 窗口缓冲
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-	// 设置窗口的维度
-	glViewport(0, 0, width, height);
-}
-
-void processInput(GLFWwindow* window)
+void OpenGL_Session1::processInput(GLFWwindow* window)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
 }
 
-void drawView() {
+void OpenGL_Session1::drawView() {
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
@@ -92,7 +81,7 @@ void drawView() {
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-	
+
 
 	const char* vertexShaderSource = R"(#version 330 core
 layout(location = 0) in vec3 aPos;
@@ -135,3 +124,4 @@ void main()	{
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 }
+
