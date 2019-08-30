@@ -2,14 +2,14 @@
 #include <iostream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include "BaseSession.cpp"
+#include "BaseSession.h"
 
 class OpenGL_Session1 : public BaseSession
 {
 public:
 	OpenGL_Session1();
 	~OpenGL_Session1();
-	void Start();
+	void Start(ApplicationStart* application);
 	void processInput(GLFWwindow* window);
 	void drawView();
 };

@@ -1,15 +1,15 @@
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "BaseSession.h"
+BaseSession::BaseSession() {}
+BaseSession::~BaseSession() {}
 
-class BaseSession
+void BaseSession::Start(ApplicationStart* application)
 {
-public:
-	BaseSession()
-	{}
-	~BaseSession()
-	{}
-	virtual void Start() = 0;
-	virtual void processInput(GLFWwindow* window) = 0;
-	virtual void drawView() = 0;
-};
+}
 
+void BaseSession::processInput(GLFWwindow* window)
+{
+}
+
+void BaseSession::drawView()
+{
+}

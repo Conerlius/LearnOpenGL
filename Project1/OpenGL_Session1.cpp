@@ -6,9 +6,8 @@ OpenGL_Session1::OpenGL_Session1() {
 }
 OpenGL_Session1::~OpenGL_Session1() {
 }
-void OpenGL_Session1::Start()
+void OpenGL_Session1::Start(ApplicationStart* application)
 {
-
 }
 
 void OpenGL_Session1::processInput(GLFWwindow* window)
