@@ -6,56 +6,11 @@ OpenGL_Session1::OpenGL_Session1() {
 }
 OpenGL_Session1::~OpenGL_Session1() {
 }
-int OpenGL_Session1::Start()
+void OpenGL_Session1::Start()
 {
-	this->initGLFW();
-	int result = this->drawWindow();
-	return result;
-}
-void OpenGL_Session1::framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-	// 设置窗口的维度
-	glViewport(0, 0, width, height);
+
 }
 
-// 初始化GLFW
-void OpenGL_Session1::initGLFW() {
-	glfwInit();
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-}
-int OpenGL_Session1::drawWindow() {
-
-	GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
-
-	if (window == NULL)
-	{
-		glfwTerminate();
-		return -1;
-	}
-	// 绑定窗口上下文
-	glfwMakeContextCurrent(window);
-	// 初始化opengl的函数指针
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-	{
-		return -1;
-	}
-	//窗口大小被调整的回调
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-	// 
-	while (!glfwWindowShouldClose(window))
-	{
-		processInput(window);
-
-		drawView();
-
-		glfwSwapBuffers(window);
-		glfwPollEvents();
-	}
-	glfwTerminate();
-	return 0;
-}
 void OpenGL_Session1::processInput(GLFWwindow* window)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)

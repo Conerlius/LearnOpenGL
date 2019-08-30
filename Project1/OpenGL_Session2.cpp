@@ -41,7 +41,7 @@ int OpenGL_Session2::drawWindow() {
 	{
 		this->processInput(window);
 	}
-	return 1;
+	return 0;
 }
 
 

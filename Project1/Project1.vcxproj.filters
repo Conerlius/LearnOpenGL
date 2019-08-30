@@ -27,6 +27,12 @@
     <ClCompile Include="OpenGL_Session1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="BaseSession.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GLSLVect.vsh">

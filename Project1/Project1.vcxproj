@@ -141,6 +141,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ApplicationStart.cpp" />
+    <ClCompile Include="BaseSession.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="OpenGL_Session1.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="OpenGL_Session2.cpp" />
