@@ -1,15 +1,10 @@
 #include <iostream>
 #include "ApplicationStart.h"
+#include "BaseSession.h"
+#include "OpenGL_Session1.h"
+#include "OpenGL_Session2.h"
 
 using namespace std;
-
-// 单例
-//ApplicationStart* ApplicationStart::GetInstance()
-//{
-//	if (m_pInstance == NULL)
-//		m_pInstance = new ApplicationStart();
-//	return m_pInstance;
-//}
 
 // 启动
 int ApplicationStart::Start()
@@ -32,6 +27,7 @@ void ApplicationStart::Framebuffer_size_callback(GLFWwindow* window, int width, 
 
 ApplicationStart::ApplicationStart()
 {
+	m_curSession = new OpenGL_Session2();
 }
 ApplicationStart::~ApplicationStart()
 {
@@ -60,15 +56,18 @@ int ApplicationStart::drawWindow() {
 	glfwSetFramebufferSizeCallback(window, ApplicationStart::Framebuffer_size_callback);
 	while (!glfwWindowShouldClose(window))
 	{
+		// 刷新背景颜色
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
 		// 主页
-		/*if (m_curSession == NULL) {
+		if (m_curSession == NULL) {
 			this->DrawAllSessions();
 		}
 		else {
 			this->DrawBackMenu();
 			m_curSession->processInput(window);
 			m_curSession->drawView();
-		}*/
+		}
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
@@ -76,6 +75,7 @@ int ApplicationStart::drawWindow() {
 	return 0;
 }
 void ApplicationStart::DrawAllSessions() {
+
 }
 void ApplicationStart::DrawBackMenu() {
 

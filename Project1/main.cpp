@@ -3,7 +3,7 @@
 /// 启动函数
 int main() {
 	// 创建一个程序实例
-	ApplicationStart* application = new ApplicationStart();//ApplicationStart::GetInstance();
+	ApplicationStart* application = new ApplicationStart();
 	int result = application->Start();
 	return result;
 }
