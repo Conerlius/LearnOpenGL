@@ -4,11 +4,6 @@ using namespace std;
 
 
 OpenGL_Session1::OpenGL_Session1() {
-	vertices[] = {
-	-0.5f, -0.5f, 0.0f,
-	 0.5f, -0.5f, 0.0f,
-	 0.0f,  0.5f, 0.0f
-	};
 }
 OpenGL_Session1::~OpenGL_Session1() {
 }
@@ -17,6 +12,11 @@ OpenGL_Session1::~OpenGL_Session1() {
 
 void OpenGL_Session1::Start(ApplicationStart* application)
 {
+	float vertices[] = {
+	-0.5f, -0.5f, 0.0f,
+	 0.5f, -0.5f, 0.0f,
+	 0.0f,  0.5f, 0.0f
+	};
 	// Éú³ÉVAO
 	glGenVertexArrays(1, &VAO);
 	// °ó¶¨VAO

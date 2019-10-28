@@ -8,6 +8,11 @@ OpenGL_Session2::~OpenGL_Session2() {
 }
 void OpenGL_Session2::Start(ApplicationStart* application)
 {
+	float vertices[] = {
+	-0.5f, -0.5f, 0.0f,
+	 0.5f, -0.5f, 0.0f,
+	 0.0f,  0.5f, 0.0f
+	};
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);
 	glGenBuffers(1, &VBO);

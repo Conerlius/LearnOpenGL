@@ -8,7 +8,6 @@ class OpenGL_Session2 : public BaseSession
 {
 private:
 	GLuint VAO, VBO;
-	float vertices[];
 public:
 	OpenGL_Session2();
 	~OpenGL_Session2();
