@@ -3,18 +3,18 @@
 using namespace std;
 
 
-float vertices[] = {
+OpenGL_Session1::OpenGL_Session1() {
+	vertices[] = {
 	-0.5f, -0.5f, 0.0f,
 	 0.5f, -0.5f, 0.0f,
 	 0.0f,  0.5f, 0.0f
-};
-OpenGL_Session1::OpenGL_Session1() {
+	};
 }
 OpenGL_Session1::~OpenGL_Session1() {
 }
 // 声明一下要使用的VAO和VBO
 // 使用无符号short性能更优
-GLuint VAO,VBO;
+
 void OpenGL_Session1::Start(ApplicationStart* application)
 {
 	// 生成VAO
