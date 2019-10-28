@@ -1,15 +1,10 @@
 #include <iostream>
 #include "ApplicationStart.h"
+#include "OpenGL_Session1.h"
+#include "OpenGL_Session1_1.h"
+#include "OpenGL_Session2.h"
 
 using namespace std;
-
-// 单例
-//ApplicationStart* ApplicationStart::GetInstance()
-//{
-//	if (m_pInstance == NULL)
-//		m_pInstance = new ApplicationStart();
-//	return m_pInstance;
-//}
 
 // 启动
 int ApplicationStart::Start()
@@ -22,12 +17,6 @@ int ApplicationStart::Start()
 void ApplicationStart::Framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 	// 设置窗口的维度
 	glViewport(0, 0, width, height);
-	/*if (m_pInstance == NULL)
-		return;
-
-	if (m_pInstance->framebuffer_size_callback != NULL) {
-		m_pInstance->framebuffer_size_callback(window, width, height);
-	}*/
 }
 
 ApplicationStart::ApplicationStart()
@@ -61,21 +50,24 @@ int ApplicationStart::drawWindow() {
 	while (!glfwWindowShouldClose(window))
 	{
 		// 主页
-		/*if (m_curSession == NULL) {
+		if (m_curSession == NULL) {
 			this->DrawAllSessions();
 		}
 		else {
 			this->DrawBackMenu();
 			m_curSession->processInput(window);
 			m_curSession->drawView();
-		}*/
-		glfwSwapBuffers(window);
+		}
 		glfwPollEvents();
+		glfwSwapBuffers(window);
 	}
+	// 销毁窗口
 	glfwTerminate();
 	return 0;
 }
 void ApplicationStart::DrawAllSessions() {
+	m_curSession = new OpenGL_Session1();
+	m_curSession->Start(this);
 }
 void ApplicationStart::DrawBackMenu() {
 

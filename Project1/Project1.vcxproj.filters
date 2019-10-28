@@ -21,17 +21,23 @@
     <ClCompile Include="ApplicationStart.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseSession.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL_Session3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="OpenGL_Session2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="OpenGL_Session1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="OpenGL_Session1_1.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="BaseSession.h">
-      <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -46,10 +52,16 @@
     <ClInclude Include="ApplicationStart.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="OpenGL_Session1.h">
+    <ClInclude Include="OpenGL_Session3.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="OpenGL_Session2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL_Session1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL_Session1_1.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
