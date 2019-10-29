@@ -7,7 +7,7 @@
 class OpenGL_Session2 : public BaseSession
 {
 private:
-	GLuint VAO, VBO;
+	GLuint VAO, VBO, shaderId;
 public:
 	OpenGL_Session2();
 	~OpenGL_Session2();
@@ -15,5 +15,5 @@ public:
 	void processInput(GLFWwindow* window);
 	void drawView();
 private:
-	void UseShader();
+	GLuint CompileShader();
 };

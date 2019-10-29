@@ -39,6 +39,9 @@
     <ClCompile Include="OpenGL_Session2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="OpenGl_Tools.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GLSLVect.vsh">
@@ -62,6 +65,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="OpenGL_Session2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGl_Tools.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

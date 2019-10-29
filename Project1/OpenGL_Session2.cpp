@@ -18,6 +18,7 @@ void OpenGL_Session2::Start(ApplicationStart* application)
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	shaderId = CompileShader();
 }
 
 void OpenGL_Session2::processInput(GLFWwindow* window)
@@ -31,23 +32,23 @@ void OpenGL_Session2::drawView() {
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	glBindVertexArray(VAO);
-	UseShader();
-
+	
+	glUseProgram(shaderId);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
 	glEnableVertexAttribArray(0);
 
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 	glDisableVertexAttribArray(0);
 }
-
-void OpenGL_Session2::UseShader() {
+// ±‡“Îshader
+GLuint OpenGL_Session2::CompileShader() {
 	const char* vertexShaderSource = R"(#version 330 core
 layout(location = 0) in vec3 aPos;
 void main()	{
 	gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
 })";
 
-	unsigned int vertexShader;
+	GLuint vertexShader;
 	vertexShader = glCreateShader(GL_VERTEX_SHADER);
 
 	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
@@ -59,20 +60,19 @@ void main()	{
 		FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);	
 })";
 
-	unsigned int fragmentShader;
+	GLuint fragmentShader;
 	fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
 	glCompileShader(fragmentShader);
 
-	unsigned int shaderProgram;
+	GLuint shaderProgram;
 	shaderProgram = glCreateProgram();
 
 	glAttachShader(shaderProgram, vertexShader);
 	glAttachShader(shaderProgram, fragmentShader);
 	glLinkProgram(shaderProgram);
 
-	glUseProgram(shaderProgram);
-
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
+	return shaderProgram;
 }
