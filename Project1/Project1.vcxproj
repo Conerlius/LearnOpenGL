@@ -138,8 +138,7 @@
     <ClInclude Include="ApplicationStart.h" />
     <ClInclude Include="OpenGL_Session1.h" />
     <ClInclude Include="OpenGL_Session2.h" />
-    <ClInclude Include="OpenGL_Session2_1.h" />
-    <ClInclude Include="OpenGL_Session3_1.h" />
+    <ClInclude Include="OpenGL_Session3.h" />
     <ClInclude Include="OpenGl_Tools.h" />
   </ItemGroup>
   <ItemGroup>
@@ -149,8 +148,7 @@
     <ClCompile Include="glad.c" />
     <ClCompile Include="OpenGL_Session1.cpp" />
     <ClCompile Include="OpenGL_Session2.cpp" />
-    <ClCompile Include="OpenGL_Session2_1.cpp" />
-    <ClCompile Include="OpenGL_Session3_1.cpp" />
+    <ClCompile Include="OpenGL_Session3.cpp" />
     <ClCompile Include="OpenGl_Tools.cpp" />
   </ItemGroup>
   <ItemGroup>

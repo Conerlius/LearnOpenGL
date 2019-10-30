@@ -1,17 +1,25 @@
-#include "OpenGl_Tools.h"
+#include "OpenGL_Tools.h"
 #include <fstream>
 #include <sstream>
 #include <vector>
 using namespace std;
 
-OpenGl_Tools::OpenGl_Tools()
+OpenGL_Tools::OpenGL_Tools()
 {
 }
-OpenGl_Tools::~OpenGl_Tools()
+OpenGL_Tools::~OpenGL_Tools()
 {
+}
+OpenGL_Tools* OpenGL_Tools::m_pInstance = NULL;
+
+OpenGL_Tools* OpenGL_Tools::GetInstance()
+{
+	if (m_pInstance == NULL)  //判断是否第一次调用
+		m_pInstance = new OpenGL_Tools();
+	return m_pInstance;
 }
 // 获取已经编译的shader
-GLuint OpenGl_Tools::GetShader(string name) 
+GLuint OpenGL_Tools::GetShader(string name)
 {
 	map<string, GLuint>::iterator it = shader_map.find(name);
 	if (it != shader_map.end()) {
@@ -23,12 +31,24 @@ GLuint OpenGl_Tools::GetShader(string name)
 	}
 	return -1;
 }
+
+void OpenGL_Tools::UseShader(string name)
+{
+	GLuint programId = GetShader(name);
+	if (programId == -1)
+	{
+		return;
+	}
+	glUseProgram(programId);
+}
 // 编译shader
 // vertex_path	vertex文件路径
 // fragment_path	fragment文件路径
 // name		shader名称
-void OpenGl_Tools::CompileShader(const char* vertex_path, const char* fragment_path, string name)
+void OpenGL_Tools::CompileShader(const char* vertex_path, const char* fragment_path, string name)
 {
+	if (GetShader(name) != -1)
+		return;
 	// 声明Vertex和Fragment的对象id
 	GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 	GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);

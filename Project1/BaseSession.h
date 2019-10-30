@@ -1,6 +1,7 @@
 #pragma once
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include "OpenGL_Tools.h"
 
 class ApplicationStart;
 

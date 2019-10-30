@@ -2,6 +2,7 @@
 #include "ApplicationStart.h"
 #include "OpenGL_Session1.h"
 #include "OpenGL_Session2.h"
+#include "OpenGL_Session3.h"
 
 using namespace std;
 
@@ -46,6 +47,8 @@ int ApplicationStart::drawWindow() {
 	}
 	//窗口大小被调整的回调
 	glfwSetFramebufferSizeCallback(window, ApplicationStart::Framebuffer_size_callback);
+	// 预编译shader
+	OpenGL_Tools::GetInstance()->CompileShader("BaseVertex.shader", "BaseFragment.shader", "BaseShader");
 	while (!glfwWindowShouldClose(window))
 	{
 		// 主页
@@ -65,7 +68,7 @@ int ApplicationStart::drawWindow() {
 	return 0;
 }
 void ApplicationStart::DrawAllSessions() {
-	m_curSession = new OpenGL_Session2();
+	m_curSession = new OpenGL_Session3();
 	m_curSession->Start(this);
 }
 void ApplicationStart::DrawBackMenu() {
