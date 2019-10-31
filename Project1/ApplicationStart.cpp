@@ -3,6 +3,7 @@
 #include "OpenGL_Session1.h"
 #include "OpenGL_Session2.h"
 #include "OpenGL_Session3.h"
+#include "OpenGL_Session4.h"
 
 using namespace std;
 
@@ -68,7 +69,7 @@ int ApplicationStart::drawWindow() {
 	return 0;
 }
 void ApplicationStart::DrawAllSessions() {
-	m_curSession = new OpenGL_Session3();
+	m_curSession = new OpenGL_Session4();
 	m_curSession->Start(this);
 }
 void ApplicationStart::DrawBackMenu() {

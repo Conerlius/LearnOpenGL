@@ -39,12 +39,21 @@
     <ClCompile Include="OpenGL_Session3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="OpenGL_Session4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GLSLVect.vsh">
       <Filter>资源文件</Filter>
     </None>
     <None Include="GLSLFrame.fsh">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="BaseFragment.shader">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="BaseVertex.shader">
       <Filter>资源文件</Filter>
     </None>
   </ItemGroup>
@@ -62,6 +71,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="OpenGL_Session3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL_Session4.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
