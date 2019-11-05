@@ -40,6 +40,15 @@
     <Filter Include="源文件\Session7">
       <UniqueIdentifier>{46f201f0-f32b-48e6-8ac1-68eed52772bf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="资源文件\Shaders\Session7">
+      <UniqueIdentifier>{9479cef5-c3d9-46a9-87c8-dccf19ace63e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Session8">
+      <UniqueIdentifier>{7298d22d-ac27-43f6-94b3-c94f9ec1175d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Shaders\Session8">
+      <UniqueIdentifier>{d898bdcc-0323-4887-b0ee-6a831f7ba6ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -78,6 +87,9 @@
     <ClCompile Include="Session7\OpenGL_Session7.cpp">
       <Filter>源文件\Session7</Filter>
     </ClCompile>
+    <ClCompile Include="Session8\OpenGL_Session8.cpp">
+      <Filter>源文件\Session8</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationStart.h">
@@ -110,6 +122,12 @@
     <ClInclude Include="Session7\OpenGL_Session7.h">
       <Filter>源文件\Session7</Filter>
     </ClInclude>
+    <ClInclude Include="Session8\OpenGL_Session8.h">
+      <Filter>源文件\Session8</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\BaseFragment.shader">
@@ -123,6 +141,18 @@
     </None>
     <None Include="Shaders\Session6\Session6_Vertex.shader">
       <Filter>资源文件\Shaders\Session6</Filter>
+    </None>
+    <None Include="Shaders\Session7\Session7_Fragment.shader">
+      <Filter>资源文件\Shaders\Session7</Filter>
+    </None>
+    <None Include="Shaders\Session7\Session7_Vertex.shader">
+      <Filter>资源文件\Shaders\Session7</Filter>
+    </None>
+    <None Include="Shaders\Session8\Session8_Fragment.shader">
+      <Filter>资源文件\Shaders\Session8</Filter>
+    </None>
+    <None Include="Shaders\Session8\Session8_Vertex.shader">
+      <Filter>资源文件\Shaders\Session8</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -145,6 +145,8 @@
     <ClInclude Include="Session5\OpenGL_Session5.h" />
     <ClInclude Include="Session6\OpenGL_Session6.h" />
     <ClInclude Include="Session7\OpenGL_Session7.h" />
+    <ClInclude Include="Session8\OpenGL_Session8.h" />
+    <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ApplicationStart.cpp" />
@@ -159,12 +161,17 @@
     <ClCompile Include="Session5\OpenGL_Session5.cpp" />
     <ClCompile Include="Session6\OpenGL_Session6.cpp" />
     <ClCompile Include="Session7\OpenGL_Session7.cpp" />
+    <ClCompile Include="Session8\OpenGL_Session8.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\BaseFragment.shader" />
     <None Include="Shaders\BaseVertex.shader" />
     <None Include="Shaders\Session6\Session6_Fragment.shader" />
     <None Include="Shaders\Session6\Session6_Vertex.shader" />
+    <None Include="Shaders\Session7\Session7_Fragment.shader" />
+    <None Include="Shaders\Session7\Session7_Vertex.shader" />
+    <None Include="Shaders\Session8\Session8_Fragment.shader" />
+    <None Include="Shaders\Session8\Session8_Vertex.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
