@@ -41,7 +41,7 @@ OpenGL_Session4::OpenGL_Session4()
 	1.0f,-1.0f, 1.0f
 	};
 	
-	glm::mat4 myScalingMatrix = glm::scale(2.0f, 2.0f, 2.0f);
+	//glm::mat4 myScalingMatrix = glm::scale(2.0f, 2.0f, 2.0f);
 
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -131,5 +131,5 @@ void OpenGL_Session4::drawView()
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	glDrawArrays(GL_TRIANGLES, 0, 12*3);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-	glDisableVertexAttribArray(0);
+	//glDisableVertexAttribArray(0);
 }

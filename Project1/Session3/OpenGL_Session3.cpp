@@ -49,5 +49,5 @@ void OpenGL_Session3::drawView()
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 	// »Ö¸´Ìî³äÄ£Ê½
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	// glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }

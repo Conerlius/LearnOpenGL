@@ -75,7 +75,7 @@
     <LibraryPath>$(SolutionDir)\..\glfw-3.3.bin.WIN64\lib-vc2019;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>F:\MySelfGit\LearnOpenGL\glfw-3.3.bin.WIN64\include;F:\MySelfGit\LearnOpenGL\glad\include;$(IncludePath)</IncludePath>
+    <IncludePath>F:\MySelfGit\LearnOpenGL\glfw-3.3.bin.WIN64\include;F:\MySelfGit\LearnOpenGL\glad\include;F:\MySelfGit\LearnOpenGL\glm;$(IncludePath)</IncludePath>
     <LibraryPath>F:\MySelfGit\LearnOpenGL\glfw-3.3.bin.WIN64\lib-vc2019;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -136,28 +136,35 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationStart.h" />
-    <ClInclude Include="OpenGL_Session1.h" />
-    <ClInclude Include="OpenGL_Session2.h" />
-    <ClInclude Include="OpenGL_Session3.h" />
-    <ClInclude Include="OpenGL_Session4.h" />
+    <ClInclude Include="OpenGL_Session5.h" />
     <ClInclude Include="OpenGl_Tools.h" />
+    <ClInclude Include="Session1\OpenGL_Session1.h" />
+    <ClInclude Include="Session2\OpenGL_Session2.h" />
+    <ClInclude Include="Session3\OpenGL_Session3.h" />
+    <ClInclude Include="Session4\OpenGL_Session4.h" />
+    <ClInclude Include="Session5\OpenGL_Session5.h" />
+    <ClInclude Include="Session6\OpenGL_Session6.h" />
+    <ClInclude Include="Session7\OpenGL_Session7.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ApplicationStart.cpp" />
     <ClCompile Include="BaseSession.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="glad.c" />
-    <ClCompile Include="OpenGL_Session1.cpp" />
-    <ClCompile Include="OpenGL_Session2.cpp" />
-    <ClCompile Include="OpenGL_Session3.cpp" />
-    <ClCompile Include="OpenGL_Session4.cpp" />
     <ClCompile Include="OpenGl_Tools.cpp" />
+    <ClCompile Include="Session1\OpenGL_Session1.cpp" />
+    <ClCompile Include="Session2\OpenGL_Session2.cpp" />
+    <ClCompile Include="Session3\OpenGL_Session3.cpp" />
+    <ClCompile Include="Session4\OpenGL_Session4.cpp" />
+    <ClCompile Include="Session5\OpenGL_Session5.cpp" />
+    <ClCompile Include="Session6\OpenGL_Session6.cpp" />
+    <ClCompile Include="Session7\OpenGL_Session7.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="BaseFragment.shader" />
-    <None Include="BaseVertex.shader" />
-    <None Include="GLSLFrame.fsh" />
-    <None Include="GLSLVect.vsh" />
+    <None Include="Shaders\BaseFragment.shader" />
+    <None Include="Shaders\BaseVertex.shader" />
+    <None Include="Shaders\Session6\Session6_Fragment.shader" />
+    <None Include="Shaders\Session6\Session6_Vertex.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

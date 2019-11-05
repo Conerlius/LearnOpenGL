@@ -1,7 +1,5 @@
 #pragma once
-#include <iostream>
-#include <glad/glad.h>
-#include "BaseSession.h"
+#include "../BaseSession.h"
 
 class OpenGL_Session3:public BaseSession
 {

@@ -1,15 +1,15 @@
 #pragma once
-#include "BaseSession.h"
+#include "../BaseSession.h"
 
-class OpenGL_Session4 : public BaseSession
+class OpenGL_Session7 : public BaseSession
 {
 public:
-	OpenGL_Session4();
-	~OpenGL_Session4();
+	OpenGL_Session7();
+	~OpenGL_Session7();
 	void Start(ApplicationStart* application);
 	void processInput(GLFWwindow* window);
 	void drawView();
 
 private:
-	GLuint VBO, VAO, EBO;
+	GLuint VBO, VAO;
 };

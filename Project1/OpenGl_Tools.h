@@ -4,6 +4,9 @@
 #include <map>
 #include <string>
 
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
 class OpenGL_Tools {
 private:
 	std::map<std::string, GLuint> shader_map;
@@ -16,7 +19,10 @@ public:
 	// 编译shader
 	void CompileShader(const char* vertex_path, const char* fragment_path, std::string name);
 	// 使用shader
-	void UseShader(std::string name);
+	GLuint UseShader(std::string name);
+
+	// 加载图片资源
+	GLuint LoadTexture(const char* path);
 
 	static OpenGL_Tools* GetInstance();
 };

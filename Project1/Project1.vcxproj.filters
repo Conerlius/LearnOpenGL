@@ -13,6 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\Session1">
+      <UniqueIdentifier>{e9b29f6e-3aa7-4d47-9216-3dfba8de4183}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Session2">
+      <UniqueIdentifier>{da3e6979-fe53-4523-ac6b-36e9484df534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Session3">
+      <UniqueIdentifier>{438b6da1-d4db-4a2a-902c-e30107e0522b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Session4">
+      <UniqueIdentifier>{479c1f33-9a23-4909-81f9-4e2ab63cdd48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Session5">
+      <UniqueIdentifier>{f0c58e29-4217-4ac5-8ee9-8945f12bdc47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Shaders">
+      <UniqueIdentifier>{904c85d6-8b62-4f30-aa46-c926a61d5e79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Shaders\Session6">
+      <UniqueIdentifier>{214f72f4-a767-4217-ad11-190e24bac30f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Session6">
+      <UniqueIdentifier>{e3655155-5550-4562-9dbf-0855ffc13ba4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Session7">
+      <UniqueIdentifier>{46f201f0-f32b-48e6-8ac1-68eed52772bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -27,54 +54,75 @@
     <ClCompile Include="BaseSession.h">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="OpenGL_Session1.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="OpenGL_Session2.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="OpenGl_Tools.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="OpenGL_Session3.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Session1\OpenGL_Session1.cpp">
+      <Filter>源文件\Session1</Filter>
     </ClCompile>
-    <ClCompile Include="OpenGL_Session4.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Session2\OpenGL_Session2.cpp">
+      <Filter>源文件\Session2</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="GLSLVect.vsh">
-      <Filter>资源文件</Filter>
-    </None>
-    <None Include="GLSLFrame.fsh">
-      <Filter>资源文件</Filter>
-    </None>
-    <None Include="BaseFragment.shader">
-      <Filter>资源文件</Filter>
-    </None>
-    <None Include="BaseVertex.shader">
-      <Filter>资源文件</Filter>
-    </None>
+    <ClCompile Include="Session3\OpenGL_Session3.cpp">
+      <Filter>源文件\Session3</Filter>
+    </ClCompile>
+    <ClCompile Include="Session4\OpenGL_Session4.cpp">
+      <Filter>源文件\Session4</Filter>
+    </ClCompile>
+    <ClCompile Include="Session5\OpenGL_Session5.cpp">
+      <Filter>源文件\Session5</Filter>
+    </ClCompile>
+    <ClCompile Include="Session6\OpenGL_Session6.cpp">
+      <Filter>源文件\Session6</Filter>
+    </ClCompile>
+    <ClCompile Include="Session7\OpenGL_Session7.cpp">
+      <Filter>源文件\Session7</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationStart.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="OpenGL_Session1.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="OpenGL_Session2.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="OpenGl_Tools.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="OpenGL_Session3.h">
+    <ClInclude Include="Session1\OpenGL_Session1.h">
+      <Filter>源文件\Session1</Filter>
+    </ClInclude>
+    <ClInclude Include="Session2\OpenGL_Session2.h">
+      <Filter>源文件\Session2</Filter>
+    </ClInclude>
+    <ClInclude Include="Session3\OpenGL_Session3.h">
+      <Filter>源文件\Session3</Filter>
+    </ClInclude>
+    <ClInclude Include="Session4\OpenGL_Session4.h">
+      <Filter>源文件\Session4</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL_Session5.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="OpenGL_Session4.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Session5\OpenGL_Session5.h">
+      <Filter>源文件\Session5</Filter>
     </ClInclude>
+    <ClInclude Include="Session6\OpenGL_Session6.h">
+      <Filter>源文件\Session6</Filter>
+    </ClInclude>
+    <ClInclude Include="Session7\OpenGL_Session7.h">
+      <Filter>源文件\Session7</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\BaseFragment.shader">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="Shaders\BaseVertex.shader">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="Shaders\Session6\Session6_Fragment.shader">
+      <Filter>资源文件\Shaders\Session6</Filter>
+    </None>
+    <None Include="Shaders\Session6\Session6_Vertex.shader">
+      <Filter>资源文件\Shaders\Session6</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -32,14 +32,15 @@ GLuint OpenGL_Tools::GetShader(string name)
 	return -1;
 }
 
-void OpenGL_Tools::UseShader(string name)
+GLuint OpenGL_Tools::UseShader(string name)
 {
 	GLuint programId = GetShader(name);
 	if (programId == -1)
 	{
-		return;
+		return programId;
 	}
 	glUseProgram(programId);
+	return programId;
 }
 // 编译shader
 // vertex_path	vertex文件路径
@@ -136,3 +137,17 @@ void OpenGL_Tools::CompileShader(const char* vertex_path, const char* fragment_p
 	// 记录
 	shader_map.insert(std::pair<string, GLuint>(name, ProgramID));
 }
+
+// 加载图片资源
+GLuint OpenGL_Tools::LoadTexture(const char* path)
+{
+	int width, height, nrChannels;
+	unsigned char* data = stbi_load(path, &width, &height, &nrChannels, 0);
+
+	GLuint texture;
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+	glGenerateMipmap(GL_TEXTURE_2D);
+}
+
