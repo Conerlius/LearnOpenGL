@@ -70,13 +70,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)\..\glfw-3.3.bin.WIN64\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\..\ThridPart\glfw-3.3.bin.WIN64\include;$(IncludePath)</IncludePath>
     <ReferencePath>$(ReferencePath)</ReferencePath>
-    <LibraryPath>$(SolutionDir)\..\glfw-3.3.bin.WIN64\lib-vc2019;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)\..\ThridPart\glfw-3.3.bin.WIN64\lib-vc2019;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>F:\MySelfGit\LearnOpenGL\ThridPart\glfw-3.3.bin.WIN64\include;F:\MySelfGit\LearnOpenGL\ThridPart\glad\include;F:\MySelfGit\LearnOpenGL\ThridPart\glm;$(IncludePath)</IncludePath>
-    <LibraryPath>F:\MySelfGit\LearnOpenGL\ThridPart\glfw-3.3.bin.WIN64\lib-vc2019;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\..\ThridPart\glfw-3.3.bin.WIN64\include;$(SolutionDir)\..\ThridPart\glad\include;$(SolutionDir)\..\ThridPart\glm;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\..\ThridPart\glfw-3.3.bin.WIN64\lib-vc2019;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
