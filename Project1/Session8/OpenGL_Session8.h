@@ -12,4 +12,5 @@ public:
 
 private:
 	GLuint VBO, VAO;
+	GLuint texture1, texture2;
 };

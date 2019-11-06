@@ -1,5 +1,6 @@
 #pragma once
 #include "../BaseSession.h"
+#include "../stb_image.h"
 
 class OpenGL_Session1 : public BaseSession
 {

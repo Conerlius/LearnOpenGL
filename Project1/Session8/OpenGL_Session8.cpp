@@ -11,35 +11,42 @@ OpenGL_Session8::~OpenGL_Session8()
 void OpenGL_Session8::Start(ApplicationStart* application)
 {
 	// 预编译shader
-	OpenGL_Tools::GetInstance()->CompileShader("Shaders/Session8/Session8_Vertex.shader", "Shaders/Session8/Session7_Fragment.shader", "Session8Shader");
+	OpenGL_Tools::GetInstance()->CompileShader("Shaders/Session8/Session8_Vertex.shader", "Shaders/Session8/Session8_Fragment.shader", "Session8Shader");
+	// 加载图片
+	texture1 = OpenGL_Tools::GetInstance()->LoadTexture("container.jpg");
+	texture2 = OpenGL_Tools::GetInstance()->LoadTexture("awesomeface.png");
 	float vertices[] = {
-		// 位置             
-		 0.5f, -0.5f, 0.0f,   // 右下
-		-0.5f, -0.5f, 0.0f,   // 左下
-		 0.0f,  0.5f, 0.0f    // 顶部
-	};
-	float texCoords[] = {
-	0.0f, 0.0f, // 左下角
-	1.0f, 0.0f, // 右下角
-	0.5f, 1.0f // 上中
+		//     ---- 位置 ----       ---- 颜色 ----     - 纹理坐标 -
+			 0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // 右上
+			 0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // 右下
+			-0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
+			-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // 左上
 	};
 	unsigned int indices[] = { // 注意索引从0开始! 
-		0, 1, 2, // 第一个三角形
+		0, 1, 3, // 第一个三角形
+		1, 2, 3, // 第二个三角形
 	};
+
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
+	// 定点
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GL_FLOAT), (void*)0);
+	glEnableVertexAttribArray(0);
+	// 颜色
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GL_FLOAT), (void*)(3 * sizeof(GL_FLOAT)));
+	glEnableVertexAttribArray(1);
+	// uv
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GL_FLOAT), (void*)(6 * sizeof(GL_FLOAT)));
+	glEnableVertexAttribArray(2);
 	
 	GLuint EBO;
 	glGenBuffers(1, &EBO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GL_FLOAT), (void*)0);
-	glEnableVertexAttribArray(0);
 }
 void OpenGL_Session8::processInput(GLFWwindow* window)
 {
@@ -51,17 +58,19 @@ void OpenGL_Session8::drawView()
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	// 不需要也能生效，这个要查一下
+	// glBindTexture(GL_TEXTURE_2D, texture1);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texture1);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, texture2);
 	glBindVertexArray(VAO);
 
 	GLuint shaderProgram = OpenGL_Tools::GetInstance()->UseShader("Session8Shader");
+	//ourShader.use(); // 别忘记在激活着色器前先设置uniform！
+	glUniform1i(glGetUniformLocation(shaderProgram, "texture1"), 0); // 手动设置
+	glUniform1i(glGetUniformLocation(shaderProgram, "texture2"), 1); // 或者使用着色器类设置
 
-	// 更新uniform颜色
-	float timeValue = glfwGetTime();
-	float greenValue = sin(timeValue) / 2.0f + 0.5f;
-	int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
-	glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
-
-	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
-
 }

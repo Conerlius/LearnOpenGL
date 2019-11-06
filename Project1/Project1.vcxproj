@@ -75,8 +75,8 @@
     <LibraryPath>$(SolutionDir)\..\glfw-3.3.bin.WIN64\lib-vc2019;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>F:\MySelfGit\LearnOpenGL\glfw-3.3.bin.WIN64\include;F:\MySelfGit\LearnOpenGL\glad\include;F:\MySelfGit\LearnOpenGL\glm;$(IncludePath)</IncludePath>
-    <LibraryPath>F:\MySelfGit\LearnOpenGL\glfw-3.3.bin.WIN64\lib-vc2019;$(LibraryPath)</LibraryPath>
+    <IncludePath>F:\MySelfGit\LearnOpenGL\ThridPart\glfw-3.3.bin.WIN64\include;F:\MySelfGit\LearnOpenGL\ThridPart\glad\include;F:\MySelfGit\LearnOpenGL\ThridPart\glm;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\MySelfGit\LearnOpenGL\ThridPart\glfw-3.3.bin.WIN64\lib-vc2019;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -96,6 +96,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,6 +147,7 @@
     <ClInclude Include="Session6\OpenGL_Session6.h" />
     <ClInclude Include="Session7\OpenGL_Session7.h" />
     <ClInclude Include="Session8\OpenGL_Session8.h" />
+    <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
