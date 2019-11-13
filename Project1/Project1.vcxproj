@@ -75,8 +75,8 @@
     <LibraryPath>$(SolutionDir)\..\ThridPart\glfw-3.3.bin.WIN64\lib-vc2019;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)\..\ThridPart\glfw-3.3.bin.WIN64\include;$(SolutionDir)\..\ThridPart\glad\include;$(SolutionDir)\..\ThridPart\glm;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\..\ThridPart\glfw-3.3.bin.WIN64\lib-vc2019;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)ThridPart\glfw-3.3.bin.WIN64\include;$(SolutionDir)ThridPart\glad\include;$(SolutionDir)ThridPart\glm;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)ThridPart\glfw-3.3.bin.WIN64\lib-vc2019;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
