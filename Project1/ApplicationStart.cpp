@@ -14,11 +14,14 @@ using namespace std;
 // 启动
 int ApplicationStart::Start()
 {
-	initGLFW();
+	if (initGLFW() != 0) {
+		return -1;
+	}
 	int result = drawWindow();
 	return result;
 }
-
+// 设置窗口的维度
+// 如果不重置的话，导致opengl画的界面没有全屏
 void ApplicationStart::Framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 	// 设置窗口的维度
 	glViewport(0, 0, width, height);
@@ -31,12 +34,21 @@ ApplicationStart::~ApplicationStart()
 {
 }
 // 初始化GLFW
-void ApplicationStart::initGLFW() {
-	glfwInit();
+int ApplicationStart::initGLFW() {
+	if (!glfwInit()) {
+		return -1;
+	}
+	// 4倍抗锯齿
+	glfwWindowHint(GLFW_SAMPLES, 4);
+	// opengl的版本
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	// 直接声明使用opengl core
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#if MAC_OS
+	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#endif
+	return 0;
 }
 
 // 绘制展示页面
@@ -73,7 +85,7 @@ int ApplicationStart::drawWindow() {
 	return 0;
 }
 void ApplicationStart::DrawAllSessions() {
-	m_curSession = new OpenGL_Session8();
+	m_curSession = new OpenGL_Session2();
 	m_curSession->Start(this);
 }
 void ApplicationStart::DrawBackMenu() {

@@ -19,7 +19,7 @@ public:
 
 private:
 	// 初始化GLFW
-	void initGLFW();
+	int initGLFW();
 
 	// 绘制展示页面
 	int drawWindow();
