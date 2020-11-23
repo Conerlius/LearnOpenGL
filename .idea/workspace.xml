@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1037f0c6-b109-4329-af05-e6c637364024" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Project1/ApplicationStart.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/ApplicationStart.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/Project1.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Project1.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/Project1.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Project1.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/Session3/OpenGL_Session3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Session3/OpenGL_Session3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/Session4/OpenGL_Session4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Session4/OpenGL_Session4.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/Session5/OpenGL_Session5.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Session5/OpenGL_Session5.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/Session6/OpenGL_Session6.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Session6/OpenGL_Session6.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/Session7/OpenGL_Session7.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Session7/OpenGL_Session7.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/Session8/OpenGL_Session8.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Session8/OpenGL_Session8.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1/Shaders/Session8/Session8_Fragment.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Shaders/Session8/Session8_Fragment.shader" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kPMCHg2KLowmwTHASd82ti3c3V" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1037f0c6-b109-4329-af05-e6c637364024" name="Default Changelist" comment="" />
+      <created>1605597643599</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605597643599</updated>
+      <workItem from="1605597644786" duration="26000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605597668660">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1280.56.1280.1024@0.0.1920.1040" timestamp="1605597668660" />
+  </component>
+</project>

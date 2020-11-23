@@ -138,8 +138,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationStart.h" />
-    <ClInclude Include="OpenGL_Session5.h" />
     <ClInclude Include="OpenGl_Tools.h" />
+    <ClInclude Include="Session10\OpenGL_Session10.h" />
     <ClInclude Include="Session1\OpenGL_Session1.h" />
     <ClInclude Include="Session2\OpenGL_Session2.h" />
     <ClInclude Include="Session3\OpenGL_Session3.h" />
@@ -148,6 +148,7 @@
     <ClInclude Include="Session6\OpenGL_Session6.h" />
     <ClInclude Include="Session7\OpenGL_Session7.h" />
     <ClInclude Include="Session8\OpenGL_Session8.h" />
+    <ClInclude Include="Session9\OpenGL_Session9.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
@@ -157,6 +158,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="OpenGl_Tools.cpp" />
+    <ClCompile Include="Session10\OpenGL_Session10.cpp" />
     <ClCompile Include="Session1\OpenGL_Session1.cpp" />
     <ClCompile Include="Session2\OpenGL_Session2.cpp" />
     <ClCompile Include="Session3\OpenGL_Session3.cpp" />
@@ -165,16 +167,23 @@
     <ClCompile Include="Session6\OpenGL_Session6.cpp" />
     <ClCompile Include="Session7\OpenGL_Session7.cpp" />
     <ClCompile Include="Session8\OpenGL_Session8.cpp" />
+    <ClCompile Include="Session9\OpenGL_Session9.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\BaseFragment.shader" />
     <None Include="Shaders\BaseVertex.shader" />
+    <None Include="Shaders\Session10\Session10_Fragment.shader" />
+    <None Include="Shaders\Session10\Session10_Vertex.shader" />
+    <None Include="Shaders\Session3\Session3_Fragment.shader" />
+    <None Include="Shaders\Session3\Session3_Vertex.shader" />
     <None Include="Shaders\Session6\Session6_Fragment.shader" />
     <None Include="Shaders\Session6\Session6_Vertex.shader" />
     <None Include="Shaders\Session7\Session7_Fragment.shader" />
     <None Include="Shaders\Session7\Session7_Vertex.shader" />
     <None Include="Shaders\Session8\Session8_Fragment.shader" />
     <None Include="Shaders\Session8\Session8_Vertex.shader" />
+    <None Include="Shaders\Session9\Session9_Fragment.shader" />
+    <None Include="Shaders\Session9\Session9_Vertex.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

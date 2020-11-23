@@ -8,6 +8,8 @@
 #include "Session6/OpenGL_Session6.h"
 #include "Session7/OpenGL_Session7.h"
 #include "Session8/OpenGL_Session8.h"
+#include "Session9/OpenGL_Session9.h"
+#include "Session10/OpenGL_Session10.h"
 
 using namespace std;
 
@@ -85,7 +87,7 @@ int ApplicationStart::drawWindow() {
 	return 0;
 }
 void ApplicationStart::DrawAllSessions() {
-	m_curSession = new OpenGL_Session2();
+	m_curSession = new OpenGL_Session10();
 	m_curSession->Start(this);
 }
 void ApplicationStart::DrawBackMenu() {

@@ -60,16 +60,16 @@ void OpenGL_Session8::drawView()
 
 	// 不需要也能生效，这个要查一下
 	// glBindTexture(GL_TEXTURE_2D, texture1);
-	glActiveTexture(GL_TEXTURE0);
+	//glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture1);
-	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, texture2);
+	//glActiveTexture(GL_TEXTURE1);
+	//glBindTexture(GL_TEXTURE_2D, texture2);
 	glBindVertexArray(VAO);
 
 	GLuint shaderProgram = OpenGL_Tools::GetInstance()->UseShader("Session8Shader");
 	//ourShader.use(); // 别忘记在激活着色器前先设置uniform！
-	glUniform1i(glGetUniformLocation(shaderProgram, "texture1"), 0); // 手动设置
-	glUniform1i(glGetUniformLocation(shaderProgram, "texture2"), 1); // 或者使用着色器类设置
+	//glUniform1i(glGetUniformLocation(shaderProgram, "texture1"), 0); // 手动设置
+	//glUniform1i(glGetUniformLocation(shaderProgram, "texture2"), 1); // 或者使用着色器类设置
 
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
