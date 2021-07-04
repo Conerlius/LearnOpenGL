@@ -10,7 +10,7 @@ public:
 	BaseSession* m_curSession = NULL;
 public:
 
-	// 启动
+	// 鍚姩
 	int Start();
 
 	static void Framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -18,10 +18,10 @@ public:
 	~ApplicationStart();
 
 private:
-	// 初始化GLFW
+	// 鍒濆鍖朑LFW
 	int initGLFW();
 
-	// 绘制展示页面
+	// 缁樺埗灞曠ず椤甸潰
 	int drawWindow();
 	void DrawAllSessions();
 	void DrawBackMenu();

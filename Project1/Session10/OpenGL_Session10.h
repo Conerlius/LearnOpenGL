@@ -8,4 +8,6 @@ public:
 	~OpenGL_Session10();
 	void Start(ApplicationStart* application);
 	void drawView();
+    
 };
+//REGISTER(OpenGL_Session10)

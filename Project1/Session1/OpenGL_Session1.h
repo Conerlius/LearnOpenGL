@@ -12,4 +12,6 @@ public:
 	void Start(ApplicationStart* application);
 	void processInput(GLFWwindow* window);
 	void drawView();
+    
 };
+REGISTER(OpenGL_Session1)

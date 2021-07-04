@@ -9,8 +9,9 @@ public:
 	void Start(ApplicationStart* application);
 	void processInput(GLFWwindow* window);
 	void drawView();
-
+    
 private:
 	GLuint VBO, VAO;
 	GLuint texture1, texture2;
 };
+REGISTER(OpenGL_Session8)

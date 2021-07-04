@@ -1,13 +1,13 @@
 #include <iostream>
 #include "ApplicationStart.h"
-#include "Session1/OpenGL_Session1.h"
-#include "Session2/OpenGL_Session2.h"
-#include "Session3/OpenGL_Session3.h"
-#include "Session4/OpenGL_Session4.h"
-#include "Session5/OpenGL_Session5.h"
-#include "Session6/OpenGL_Session6.h"
-#include "Session7/OpenGL_Session7.h"
-#include "Session8/OpenGL_Session8.h"
+//#include "Session1/OpenGL_Session1.h"
+//#include "Session2/OpenGL_Session2.h"
+//#include "Session3/OpenGL_Session3.h"
+//#include "Session4/OpenGL_Session4.h"
+//#include "Session5/OpenGL_Session5.h"
+//#include "Session6/OpenGL_Session6.h"
+//#include "Session7/OpenGL_Session7.h"
+//#include "Session8/OpenGL_Session8.h"
 #include "Session9/OpenGL_Session9.h"
 #include "Session10/OpenGL_Session10.h"
 
@@ -87,7 +87,8 @@ int ApplicationStart::drawWindow() {
 	return 0;
 }
 void ApplicationStart::DrawAllSessions() {
-	m_curSession = new OpenGL_Session10();
+	//m_curSession = new OpenGL_Session3();
+	m_curSession = (BaseSession*)SessionMgr::getInstance().getClassByName("OpenGL_Session8");
 	m_curSession->Start(this);
 }
 void ApplicationStart::DrawBackMenu() {

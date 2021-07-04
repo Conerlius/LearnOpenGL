@@ -11,6 +11,8 @@ public:
 	void Start(ApplicationStart* application);
 	void processInput(GLFWwindow* window);
 	void drawView();
+    
 private:
 	GLuint CompileShader();
 };
+REGISTER(OpenGL_Session2)

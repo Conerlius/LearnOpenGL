@@ -9,9 +9,9 @@ public:
 	void Start(ApplicationStart* application);
 	void processInput(GLFWwindow* window);
 	void drawView();
-
 protected:
 	GLuint VBO, VAO;
 	GLuint texture1, texture2;
 	glm::mat4 mvp;
 };
+//REGISTER(OpenGL_Session9)

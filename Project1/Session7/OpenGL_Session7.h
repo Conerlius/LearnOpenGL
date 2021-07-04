@@ -9,7 +9,8 @@ public:
 	void Start(ApplicationStart* application);
 	void processInput(GLFWwindow* window);
 	void drawView();
-
+    
 private:
 	GLuint VBO, VAO;
 };
+REGISTER(OpenGL_Session7)

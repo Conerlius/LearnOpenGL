@@ -139,6 +139,7 @@
   <ItemGroup>
     <ClInclude Include="ApplicationStart.h" />
     <ClInclude Include="OpenGl_Tools.h" />
+    <ClInclude Include="RegisterAction.h" />
     <ClInclude Include="Session10\OpenGL_Session10.h" />
     <ClInclude Include="Session1\OpenGL_Session1.h" />
     <ClInclude Include="Session2\OpenGL_Session2.h" />
@@ -149,6 +150,7 @@
     <ClInclude Include="Session7\OpenGL_Session7.h" />
     <ClInclude Include="Session8\OpenGL_Session8.h" />
     <ClInclude Include="Session9\OpenGL_Session9.h" />
+    <ClInclude Include="SessionMgr.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
@@ -168,6 +170,7 @@
     <ClCompile Include="Session7\OpenGL_Session7.cpp" />
     <ClCompile Include="Session8\OpenGL_Session8.cpp" />
     <ClCompile Include="Session9\OpenGL_Session9.cpp" />
+    <ClCompile Include="SessionMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\BaseFragment.shader" />

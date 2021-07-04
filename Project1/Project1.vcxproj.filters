@@ -111,6 +111,9 @@
     <ClCompile Include="Session10\OpenGL_Session10.cpp">
       <Filter>源文件\Session10</Filter>
     </ClCompile>
+    <ClCompile Include="SessionMgr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationStart.h">
@@ -154,6 +157,12 @@
     </ClInclude>
     <ClInclude Include="Session10\OpenGL_Session10.h">
       <Filter>源文件\Session10</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SessionMgr.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
