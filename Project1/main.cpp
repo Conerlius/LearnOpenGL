@@ -1,10 +1,14 @@
 #define STB_IMAGE_IMPLEMENTATION
-#include "ApplicationStart.h"
-
-/// Æô¶¯º¯Êı
+#include "Application.h"
+#include "MainView.h"
+/// å¯åŠ¨å‡½æ•°
 int main() {
-	// ´´½¨Ò»¸ö³ÌĞòÊµÀı
-	ApplicationStart* application = new ApplicationStart();
-	int result = application->Start();
-	return result;
+	const std::string name = "OpenGL æ•™ç¨‹";
+	// åˆ›å»ºä¸€ä¸ªçª—å£
+	Application* app = new Application(name);
+	app->CreateWorld(World::Default());
+	app->AddViewToViewPort(new MainView());
+	app->Loop();
+	app->Destroy();
+	return 0;
 }

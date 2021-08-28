@@ -13,38 +13,14 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="源文件\Session1">
-      <UniqueIdentifier>{e9b29f6e-3aa7-4d47-9216-3dfba8de4183}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Session2">
-      <UniqueIdentifier>{da3e6979-fe53-4523-ac6b-36e9484df534}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Session3">
-      <UniqueIdentifier>{438b6da1-d4db-4a2a-902c-e30107e0522b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Session4">
-      <UniqueIdentifier>{479c1f33-9a23-4909-81f9-4e2ab63cdd48}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Session5">
-      <UniqueIdentifier>{f0c58e29-4217-4ac5-8ee9-8945f12bdc47}</UniqueIdentifier>
-    </Filter>
     <Filter Include="资源文件\Shaders">
       <UniqueIdentifier>{904c85d6-8b62-4f30-aa46-c926a61d5e79}</UniqueIdentifier>
     </Filter>
     <Filter Include="资源文件\Shaders\Session6">
       <UniqueIdentifier>{214f72f4-a767-4217-ad11-190e24bac30f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\Session6">
-      <UniqueIdentifier>{e3655155-5550-4562-9dbf-0855ffc13ba4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Session7">
-      <UniqueIdentifier>{46f201f0-f32b-48e6-8ac1-68eed52772bf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="资源文件\Shaders\Session7">
       <UniqueIdentifier>{9479cef5-c3d9-46a9-87c8-dccf19ace63e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Session8">
-      <UniqueIdentifier>{7298d22d-ac27-43f6-94b3-c94f9ec1175d}</UniqueIdentifier>
     </Filter>
     <Filter Include="资源文件\Shaders\Session8">
       <UniqueIdentifier>{d898bdcc-0323-4887-b0ee-6a831f7ba6ba}</UniqueIdentifier>
@@ -52,14 +28,8 @@
     <Filter Include="资源文件\Shaders\Session3">
       <UniqueIdentifier>{76247a1e-36d1-42a6-819a-c109eb5300c6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\Session9">
-      <UniqueIdentifier>{5cee9eb5-d565-445b-99c0-1d1a8d3aa064}</UniqueIdentifier>
-    </Filter>
     <Filter Include="资源文件\Shaders\Session9">
       <UniqueIdentifier>{420269d9-cd46-4463-8f9c-e0a6191e40fd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Session10">
-      <UniqueIdentifier>{068d5b9e-4668-463f-a199-e77b9a1d3020}</UniqueIdentifier>
     </Filter>
     <Filter Include="资源文件\Shaders\Session10">
       <UniqueIdentifier>{0aa6a35f-0e32-4853-8dd8-d71b33d69e32}</UniqueIdentifier>
@@ -69,101 +39,27 @@
     <ClCompile Include="glad.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ApplicationStart.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="BaseSession.h">
-      <Filter>头文件</Filter>
-    </ClCompile>
-    <ClCompile Include="OpenGl_Tools.cpp">
+    <ClCompile Include="Application.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Session1\OpenGL_Session1.cpp">
-      <Filter>源文件\Session1</Filter>
-    </ClCompile>
-    <ClCompile Include="Session2\OpenGL_Session2.cpp">
-      <Filter>源文件\Session2</Filter>
-    </ClCompile>
-    <ClCompile Include="Session3\OpenGL_Session3.cpp">
-      <Filter>源文件\Session3</Filter>
-    </ClCompile>
-    <ClCompile Include="Session4\OpenGL_Session4.cpp">
-      <Filter>源文件\Session4</Filter>
-    </ClCompile>
-    <ClCompile Include="Session5\OpenGL_Session5.cpp">
-      <Filter>源文件\Session5</Filter>
-    </ClCompile>
-    <ClCompile Include="Session6\OpenGL_Session6.cpp">
-      <Filter>源文件\Session6</Filter>
-    </ClCompile>
-    <ClCompile Include="Session7\OpenGL_Session7.cpp">
-      <Filter>源文件\Session7</Filter>
-    </ClCompile>
-    <ClCompile Include="Session8\OpenGL_Session8.cpp">
-      <Filter>源文件\Session8</Filter>
-    </ClCompile>
-    <ClCompile Include="Session9\OpenGL_Session9.cpp">
-      <Filter>源文件\Session9</Filter>
-    </ClCompile>
-    <ClCompile Include="Session10\OpenGL_Session10.cpp">
-      <Filter>源文件\Session10</Filter>
-    </ClCompile>
-    <ClCompile Include="SessionMgr.cpp">
+    <ClCompile Include="World.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ApplicationStart.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="OpenGl_Tools.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Session1\OpenGL_Session1.h">
-      <Filter>源文件\Session1</Filter>
-    </ClInclude>
-    <ClInclude Include="Session2\OpenGL_Session2.h">
-      <Filter>源文件\Session2</Filter>
-    </ClInclude>
-    <ClInclude Include="Session3\OpenGL_Session3.h">
-      <Filter>源文件\Session3</Filter>
-    </ClInclude>
-    <ClInclude Include="Session4\OpenGL_Session4.h">
-      <Filter>源文件\Session4</Filter>
-    </ClInclude>
-    <ClInclude Include="Session5\OpenGL_Session5.h">
-      <Filter>源文件\Session5</Filter>
-    </ClInclude>
-    <ClInclude Include="Session6\OpenGL_Session6.h">
-      <Filter>源文件\Session6</Filter>
-    </ClInclude>
-    <ClInclude Include="Session7\OpenGL_Session7.h">
-      <Filter>源文件\Session7</Filter>
-    </ClInclude>
-    <ClInclude Include="Session8\OpenGL_Session8.h">
-      <Filter>源文件\Session8</Filter>
-    </ClInclude>
-    <ClInclude Include="stb_image.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Session9\OpenGL_Session9.h">
-      <Filter>源文件\Session9</Filter>
-    </ClInclude>
-    <ClInclude Include="Session10\OpenGL_Session10.h">
-      <Filter>源文件\Session10</Filter>
-    </ClInclude>
-    <ClInclude Include="RegisterAction.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SessionMgr.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
+    <ClCompile Include="MainView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UIBase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderBatch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Canvas.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\BaseFragment.shader">
@@ -208,5 +104,28 @@
     <None Include="Shaders\Session10\Session10_Vertex.shader">
       <Filter>资源文件\Shaders\Session10</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UIBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreMinial.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderBatch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Canvas.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

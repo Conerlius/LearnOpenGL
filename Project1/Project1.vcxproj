@@ -137,40 +137,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ApplicationStart.h" />
-    <ClInclude Include="OpenGl_Tools.h" />
-    <ClInclude Include="RegisterAction.h" />
-    <ClInclude Include="Session10\OpenGL_Session10.h" />
-    <ClInclude Include="Session1\OpenGL_Session1.h" />
-    <ClInclude Include="Session2\OpenGL_Session2.h" />
-    <ClInclude Include="Session3\OpenGL_Session3.h" />
-    <ClInclude Include="Session4\OpenGL_Session4.h" />
-    <ClInclude Include="Session5\OpenGL_Session5.h" />
-    <ClInclude Include="Session6\OpenGL_Session6.h" />
-    <ClInclude Include="Session7\OpenGL_Session7.h" />
-    <ClInclude Include="Session8\OpenGL_Session8.h" />
-    <ClInclude Include="Session9\OpenGL_Session9.h" />
-    <ClInclude Include="SessionMgr.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="stb_image.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="ApplicationStart.cpp" />
-    <ClCompile Include="BaseSession.h" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="glad.c" />
-    <ClCompile Include="OpenGl_Tools.cpp" />
-    <ClCompile Include="Session10\OpenGL_Session10.cpp" />
-    <ClCompile Include="Session1\OpenGL_Session1.cpp" />
-    <ClCompile Include="Session2\OpenGL_Session2.cpp" />
-    <ClCompile Include="Session3\OpenGL_Session3.cpp" />
-    <ClCompile Include="Session4\OpenGL_Session4.cpp" />
-    <ClCompile Include="Session5\OpenGL_Session5.cpp" />
-    <ClCompile Include="Session6\OpenGL_Session6.cpp" />
-    <ClCompile Include="Session7\OpenGL_Session7.cpp" />
-    <ClCompile Include="Session8\OpenGL_Session8.cpp" />
-    <ClCompile Include="Session9\OpenGL_Session9.cpp" />
-    <ClCompile Include="SessionMgr.cpp" />
+    <ClCompile Include="MainView.cpp" />
+    <ClCompile Include="RenderBatch.cpp" />
+    <ClCompile Include="UIBase.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\BaseFragment.shader" />
@@ -187,6 +161,15 @@
     <None Include="Shaders\Session8\Session8_Vertex.shader" />
     <None Include="Shaders\Session9\Session9_Fragment.shader" />
     <None Include="Shaders\Session9\Session9_Vertex.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="Canvas.h" />
+    <ClInclude Include="CoreMinial.h" />
+    <ClInclude Include="MainView.h" />
+    <ClInclude Include="RenderBatch.h" />
+    <ClInclude Include="UIBase.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
