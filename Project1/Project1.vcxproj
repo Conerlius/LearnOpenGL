@@ -98,6 +98,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,10 +140,12 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Canvas.cpp" />
+    <ClCompile Include="CourseManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="MainView.cpp" />
     <ClCompile Include="RenderBatch.cpp" />
+    <ClCompile Include="RenderObject.cpp" />
     <ClCompile Include="UIBase.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
@@ -163,12 +166,19 @@
     <None Include="Shaders\Session9\Session9_Vertex.shader" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AllCourse.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Canvas.h" />
     <ClInclude Include="CoreMinial.h" />
+    <ClInclude Include="CourseBase.h" />
+    <ClInclude Include="CourseManager.h" />
+    <ClInclude Include="Course\Course1.h" />
+    <ClInclude Include="CUSTOM_REFLECT_ACTION.h" />
     <ClInclude Include="MainView.h" />
     <ClInclude Include="RenderBatch.h" />
+    <ClInclude Include="RenderObject.h" />
     <ClInclude Include="UIBase.h" />
+    <ClInclude Include="UIItem.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,9 +1,9 @@
 #pragma once
-#include "RenderBatch.h"
+#include "UIItem.h"
 
-class UIBase : public RenderBatch {
+class UIBase : public UIItem {
 public:
 	UIBase();
 	virtual ~UIBase();
-	void Tick();
+	virtual void Tick(double deltaTime);
 };

@@ -1,6 +1,6 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "Application.h"
-#include "MainView.h"
+#include "AllCourse.h"
 /// 启动函数
 int main() {
 	const std::string name = "OpenGL 教程";
@@ -8,6 +8,7 @@ int main() {
 	Application* app = new Application(name);
 	app->CreateWorld(World::Default());
 	app->AddViewToViewPort(new MainView());
+	app->Init();
 	app->Loop();
 	app->Destroy();
 	return 0;

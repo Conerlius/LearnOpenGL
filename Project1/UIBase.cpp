@@ -8,6 +8,6 @@ UIBase::~UIBase()
 {
 }
 
-void UIBase::Tick()
+void UIBase::Tick(double deltaTime)
 {
 }

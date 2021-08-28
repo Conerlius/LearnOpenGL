@@ -34,6 +34,9 @@
     <Filter Include="资源文件\Shaders\Session10">
       <UniqueIdentifier>{0aa6a35f-0e32-4853-8dd8-d71b33d69e32}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Course">
+      <UniqueIdentifier>{8bec97c7-8f32-477b-9898-c60e9e7702b0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -58,6 +61,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Canvas.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CourseManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -125,6 +134,27 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Canvas.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UIItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CourseManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CourseBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Course\Course1.h">
+      <Filter>头文件\Course</Filter>
+    </ClInclude>
+    <ClInclude Include="CUSTOM_REFLECT_ACTION.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AllCourse.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -8,3 +8,8 @@ World* World::Default()
 void World::Tick(double deltaTime)
 {
 }
+
+void World::Render()
+{
+	RenderBatch::Render();
+}
