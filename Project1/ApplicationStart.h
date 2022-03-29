@@ -11,7 +11,7 @@ public:
 public:
 
 	// 启动
-	int Start();
+	int Start(string courceIndex);
 
 	static void Framebuffer_size_callback(GLFWwindow* window, int width, int height);
 	ApplicationStart();
@@ -25,4 +25,5 @@ private:
 	int drawWindow();
 	void DrawAllSessions();
 	void DrawBackMenu();
+	string CourceIndex;
 };

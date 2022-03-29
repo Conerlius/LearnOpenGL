@@ -13,19 +13,20 @@
 
 using namespace std;
 
-// Æô¶¯
-int ApplicationStart::Start()
+// å¯åŠ¨
+int ApplicationStart::Start(string courceIndex)
 {
+	CourceIndex = courceIndex;
 	if (initGLFW() != 0) {
 		return -1;
 	}
 	int result = drawWindow();
 	return result;
 }
-// ÉèÖÃ´°¿ÚµÄÎ¬¶È
-// Èç¹û²»ÖØÖÃµÄ»°£¬µ¼ÖÂopengl»­µÄ½çÃæÃ»ÓÐÈ«ÆÁ
+// è®¾ç½®çª—å£çš„ç»´åº¦
+// å¦‚æžœä¸é‡ç½®çš„è¯ï¼Œå¯¼è‡´openglç”»çš„ç•Œé¢æ²¡æœ‰å…¨å±
 void ApplicationStart::Framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-	// ÉèÖÃ´°¿ÚµÄÎ¬¶È
+	// è®¾ç½®çª—å£çš„ç»´åº¦
 	glViewport(0, 0, width, height);
 }
 
@@ -35,25 +36,28 @@ ApplicationStart::ApplicationStart()
 ApplicationStart::~ApplicationStart()
 {
 }
-// ³õÊ¼»¯GLFW
+// åˆå§‹åŒ–GLFW
 int ApplicationStart::initGLFW() {
 	if (!glfwInit()) {
 		return -1;
 	}
-	// 4±¶¿¹¾â³Ý
+	// 4å€æŠ—é”¯é½¿
 	glfwWindowHint(GLFW_SAMPLES, 4);
-	// openglµÄ°æ±¾
+	// openglçš„ç‰ˆæœ¬
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	// Ö±½ÓÉùÃ÷Ê¹ÓÃopengl core
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	// ç›´æŽ¥å£°æ˜Žä½¿ç”¨opengl core
+	// glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	// å¦‚æžœä¸æƒ³æ˜¾æ€§åˆ›å»ºä¸€ä¸ªVAOçš„è¯ï¼Œå°±å¼€å¯è¿™ä¸ª
+	// https://blog.csdn.net/McQueen_LT/article/details/119515149
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_COMPAT_PROFILE);
 #if MAC_OS
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
 	return 0;
 }
 
-// »æÖÆÕ¹Ê¾Ò³Ãæ
+// ç»˜åˆ¶å±•ç¤ºé¡µé¢
 int ApplicationStart::drawWindow() {
 	GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
 	if (window == NULL) {
@@ -64,13 +68,13 @@ int ApplicationStart::drawWindow() {
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 		return 1;
 	}
-	//´°¿Ú´óÐ¡±»µ÷ÕûµÄ»Øµ÷
-	glfwSetFramebufferSizeCallback(window, ApplicationStart::Framebuffer_size_callback);
-	// Ô¤±àÒëshader
+	//çª—å£å¤§å°è¢«è°ƒæ•´çš„å›žè°ƒ
+	glfwSetFramebufferSizeCallback(window, Framebuffer_size_callback);
+	// é¢„ç¼–è¯‘shader
 	OpenGL_Tools::GetInstance()->CompileShader("Shaders/BaseVertex.shader", "Shaders/BaseFragment.shader", "BaseShader");
 	while (!glfwWindowShouldClose(window))
 	{
-		// Ö÷Ò³
+		// ä¸»é¡µ
 		if (m_curSession == NULL) {
 			this->DrawAllSessions();
 		}
@@ -79,16 +83,17 @@ int ApplicationStart::drawWindow() {
 			m_curSession->processInput(window);
 			m_curSession->drawView();
 		}
+		// æ£€æŸ¥è§¦å‘äº‹ä»¶
 		glfwPollEvents();
+		// äº¤æ¢é¢œè‰²ç¼“å†²
 		glfwSwapBuffers(window);
 	}
-	// Ïú»Ù´°¿Ú
+	// é”€æ¯çª—å£
 	glfwTerminate();
 	return 0;
 }
 void ApplicationStart::DrawAllSessions() {
-	//m_curSession = new OpenGL_Session3();
-	m_curSession = (BaseSession*)SessionMgr::getInstance().getClassByName("OpenGL_Session8");
+	m_curSession = (BaseSession*)SessionMgr::getInstance().getClassByName(CourceIndex);
 	m_curSession->Start(this);
 }
 void ApplicationStart::DrawBackMenu() {

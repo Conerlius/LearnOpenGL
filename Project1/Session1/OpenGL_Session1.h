@@ -5,7 +5,13 @@
 class OpenGL_Session1 : public BaseSession
 {
 private:
-	GLuint VAO, VBO;
+#if OpenGL_Session1_Use_Array
+	GLuint VAO;
+#else
+	GLuint VBO;
+#endif
+	GLuint shaderId;
+	GLuint attPos;
 public:
 	OpenGL_Session1();
 	~OpenGL_Session1();

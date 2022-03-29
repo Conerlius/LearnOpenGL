@@ -1,16 +1,17 @@
-#include "OpenGL_Session1.h"
+ï»¿#include "OpenGL_Session1.h"
 
 using namespace std;
 
 
-// Ö»ÊÇ»æÖÆÒ»¸öÈı½ÇĞÎ
+// åªæ˜¯ç»˜åˆ¶ä¸€ä¸ªä¸‰è§’å½¢
 
 OpenGL_Session1::OpenGL_Session1() {
 }
 OpenGL_Session1::~OpenGL_Session1() {
 }
-// ÉùÃ÷Ò»ÏÂÒªÊ¹ÓÃµÄVAOºÍVBO
-// Ê¹ÓÃÎŞ·ûºÅshortĞÔÄÜ¸üÓÅ
+
+// å£°æ˜ä¸€ä¸‹è¦ä½¿ç”¨çš„VAOå’ŒVBO
+// ä½¿ç”¨æ— ç¬¦å·shortæ€§èƒ½æ›´ä¼˜
 
 void OpenGL_Session1::Start(ApplicationStart* application)
 {
@@ -19,19 +20,21 @@ void OpenGL_Session1::Start(ApplicationStart* application)
 	 0.5f, -0.5f, 0.0f,
 	 0.0f,  0.5f, 0.0f
 	};
-	// Éú³ÉVAO
+	shaderId = OpenGL_Tools::GetInstance()->UseShader("BaseShader");
+	attPos = glGetAttribLocation(shaderId, "aPos");
+	
+	#if OpenGL_Session1_Use_Array
 	glGenVertexArrays(1, &VAO);
-	// °ó¶¨VAO
 	glBindVertexArray(VAO);
-	// Éú³ÉVBO
+	#else
 	glGenBuffers(1, &VBO);
-	// °Ñ¶¥µãÊı×é¸´ÖÆµ½»º³åÖĞ¹©OpenGLÊ¹ÓÃ
+	//æŠŠé¡¶ç‚¹æ•°ç»„å¤åˆ¶åˆ°ç¼“å†²ä¸­ä¾›OpenGLä½¿ç”¨
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-	// ÉèÖÃ¶¥µãÊôĞÔÖ¸Õë
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-	// Æô¶¯Êı×é
-	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(attPos, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray( attPos );
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	#endif
 }
 
 void OpenGL_Session1::processInput(GLFWwindow* window)
@@ -39,12 +42,23 @@ void OpenGL_Session1::processInput(GLFWwindow* window)
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
 }
-// »æÖÆ
+// ç»˜åˆ¶
+
 void OpenGL_Session1::drawView() {
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
-	// Ö¸¶¨VAO
-	glBindVertexArray(VAO);
-	// »æÖÆÈı½ÇĞÎ
+	glUseProgram(shaderId);
+	#if OpenGL_Session1_Use_Array
+	// glVertexAttribPointer(attPos, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	#else
+	// æŒ‡å®šVBO
+	// glBindBuffer( GL_ARRAY_BUFFER, VBO );
+	// // // è®¾ç½®é¡¶ç‚¹å±æ€§æŒ‡é’ˆ
+	// glVertexAttribPointer(attPos, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+	#endif
+	// å¯åŠ¨æ•°ç»„
+	// glEnableVertexAttribArray( attPos );
+	// ç»˜åˆ¶ä¸‰è§’å½¢
 	glDrawArrays(GL_TRIANGLES, 0, 3);
+	// glBindBuffer(GL_ARRAY_BUFFER, 0);
 }

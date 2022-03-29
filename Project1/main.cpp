@@ -1,10 +1,20 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "ApplicationStart.h"
 
-/// 启动函数
-int main() {
-	// 创建一个程序实例
+/// 鍚姩鍑芥暟
+int main(int argc, char* argv[]) {
+	std::string courceIndex = "OpenGL_Session8";
+	// 鑾峰彇鍙傛暟
+	for (int index =1; index < argc; index+=2)
+	{
+		std::string key_string = std::string(argv[index]);
+		if (key_string.compare("-course") == 0)
+		{
+			courceIndex = "OpenGL_Session" + std::string(argv[index+1]);
+		}
+	}
+	// 鍚姩绋嬪簭
 	ApplicationStart* application = new ApplicationStart();
-	int result = application->Start();
+	int result = application->Start(courceIndex);
 	return result;
 }

@@ -1,4 +1,4 @@
-#include "OpenGL_Tools.h"
+ï»¿#include "OpenGL_Tools.h"
 #include <fstream>
 #include <sstream>
 #include <vector>
@@ -14,11 +14,11 @@ OpenGL_Tools* OpenGL_Tools::m_pInstance = NULL;
 
 OpenGL_Tools* OpenGL_Tools::GetInstance()
 {
-	if (m_pInstance == NULL)  //ÅĞ¶ÏÊÇ·ñµÚÒ»´Îµ÷ÓÃ
+	if (m_pInstance == NULL)  //åˆ¤æ–­æ˜¯å¦ç¬¬ä¸€æ¬¡è°ƒç”¨
 		m_pInstance = new OpenGL_Tools();
 	return m_pInstance;
 }
-// »ñÈ¡ÒÑ¾­±àÒëµÄshader
+// è·å–å·²ç»ç¼–è¯‘çš„shader
 GLuint OpenGL_Tools::GetShader(string name)
 {
 	map<string, GLuint>::iterator it = shader_map.find(name);
@@ -42,18 +42,18 @@ GLuint OpenGL_Tools::UseShader(string name)
 	glUseProgram(programId);
 	return programId;
 }
-// ±àÒëshader
-// vertex_path	vertexÎÄ¼şÂ·¾¶
-// fragment_path	fragmentÎÄ¼şÂ·¾¶
-// name		shaderÃû³Æ
+// ç¼–è¯‘shader
+// vertex_path	vertexæ–‡ä»¶è·¯å¾„
+// fragment_path	fragmentæ–‡ä»¶è·¯å¾„
+// name		shaderåç§°
 void OpenGL_Tools::CompileShader(const char* vertex_path, const char* fragment_path, string name)
 {
 	if (GetShader(name) != -1)
 		return;
-	// ÉùÃ÷VertexºÍFragmentµÄ¶ÔÏóid
+	// å£°æ˜Vertexå’ŒFragmentçš„å¯¹è±¡id
 	GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 	GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
-	// ´ò¿ªVertexÎÄ±¾
+	// æ‰“å¼€Vertexæ–‡æœ¬
 	std::string VertexShaderCode;
 	std::ifstream VertexShaderStream (vertex_path, std::ios::in);
 	if (VertexShaderStream.is_open()) {
@@ -67,7 +67,7 @@ void OpenGL_Tools::CompileShader(const char* vertex_path, const char* fragment_p
 		getchar();
 		return ;
 	}
-	// ´ò¿ªFragmentÎÄ±¾
+	// æ‰“å¼€Fragmentæ–‡æœ¬
 	std::string FragmentShaderCode;
 	std::ifstream FragmentShaderStream(fragment_path, std::ios::in);
 	if (FragmentShaderStream.is_open()) {
@@ -81,7 +81,7 @@ void OpenGL_Tools::CompileShader(const char* vertex_path, const char* fragment_p
 		getchar();
 		return ;
 	}
-	// ¿ªÊ¼±àÒë
+	// å¼€å§‹ç¼–è¯‘
 	GLint Result = GL_FALSE;
 	int InfoLogLength;
 	// Compile Vertex Shader
@@ -90,7 +90,7 @@ void OpenGL_Tools::CompileShader(const char* vertex_path, const char* fragment_p
 	glShaderSource(VertexShaderID, 1, &VertexSourcePointer, NULL);
 	glCompileShader(VertexShaderID);
 
-	// ¼ì²éVertex±àÒëÇé¿ö
+	// æ£€æŸ¥Vertexç¼–è¯‘æƒ…å†µ
 	glGetShaderiv(VertexShaderID, GL_COMPILE_STATUS, &Result);
 	glGetShaderiv(VertexShaderID, GL_INFO_LOG_LENGTH, &InfoLogLength);
 	if (InfoLogLength > 0) {
@@ -104,7 +104,7 @@ void OpenGL_Tools::CompileShader(const char* vertex_path, const char* fragment_p
 	glShaderSource(FragmentShaderID, 1, &FragmentSourcePointer, NULL);
 	glCompileShader(FragmentShaderID);
 
-	// ¼ì²éFragment±àÒëÇé¿ö
+	// æ£€æŸ¥Fragmentç¼–è¯‘æƒ…å†µ
 	glGetShaderiv(FragmentShaderID, GL_COMPILE_STATUS, &Result);
 	glGetShaderiv(FragmentShaderID, GL_INFO_LOG_LENGTH, &InfoLogLength);
 	if (InfoLogLength > 0) {
@@ -120,7 +120,7 @@ void OpenGL_Tools::CompileShader(const char* vertex_path, const char* fragment_p
 	glAttachShader(ProgramID, FragmentShaderID);
 	glLinkProgram(ProgramID);
 
-	// ¼ì²é shader programµÄÇé¿ö
+	// æ£€æŸ¥ shader programçš„æƒ…å†µ
 	glGetProgramiv(ProgramID, GL_LINK_STATUS, &Result);
 	glGetProgramiv(ProgramID, GL_INFO_LOG_LENGTH, &InfoLogLength);
 	if (InfoLogLength > 0) {
@@ -134,12 +134,12 @@ void OpenGL_Tools::CompileShader(const char* vertex_path, const char* fragment_p
 
 	glDeleteShader(VertexShaderID);
 	glDeleteShader(FragmentShaderID);
-	// ¼ÇÂ¼
+	// è®°å½•
 	shader_map.insert(std::pair<string, GLuint>(name, ProgramID));
 }
 
-// ¼ÓÔØÍ¼Æ¬×ÊÔ´
-// path		×ÊÔ´Â·¾¶
+// åŠ è½½å›¾ç‰‡èµ„æº
+// path		èµ„æºè·¯å¾„
 GLuint OpenGL_Tools::LoadTexture(const char* path)
 {
 	GLuint texture;

@@ -13,14 +13,14 @@ private:
 public:
 	OpenGL_Tools();
 	~OpenGL_Tools();
-	// 通过shader名称获取gpu上的shader程序对象
+	// 閫氳繃shader鍚嶇О鑾峰彇gpu涓婄殑shader绋嬪簭瀵硅薄
 	GLuint GetShader(std::string name);
-	// 编译shader
+	// 缂栬瘧shader
 	void CompileShader(const char* vertex_path, const char* fragment_path, std::string name);
-	// 使用shader
+	// 浣跨敤shader
 	GLuint UseShader(std::string name);
 
-	// 加载图片资源
+	// 鍔犺浇鍥剧墖璧勬簮
 	GLuint LoadTexture(const char* path);
 
 	static OpenGL_Tools* GetInstance();
