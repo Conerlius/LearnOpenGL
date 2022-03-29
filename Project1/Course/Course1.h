@@ -5,5 +5,11 @@
 
 
 class Course1 : public CourseBase {
+public:
+	Course1();
+	virtual ~Course1();
+	virtual void Tick(double deltaTime) override;
+private:
+	float* vertices;
+	unsigned int VBO;
 };
-COURSE_CLASS(Course1)

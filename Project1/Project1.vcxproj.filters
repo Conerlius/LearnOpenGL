@@ -37,6 +37,9 @@
     <Filter Include="头文件\Course">
       <UniqueIdentifier>{8bec97c7-8f32-477b-9898-c60e9e7702b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Base">
+      <UniqueIdentifier>{92790e52-f4c2-4e96-9970-fa34f31c7187}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -69,50 +72,12 @@
     <ClCompile Include="CourseManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Shaders\BaseFragment.shader">
-      <Filter>资源文件\Shaders</Filter>
-    </None>
-    <None Include="Shaders\BaseVertex.shader">
-      <Filter>资源文件\Shaders</Filter>
-    </None>
-    <None Include="Shaders\Session6\Session6_Fragment.shader">
-      <Filter>资源文件\Shaders\Session6</Filter>
-    </None>
-    <None Include="Shaders\Session6\Session6_Vertex.shader">
-      <Filter>资源文件\Shaders\Session6</Filter>
-    </None>
-    <None Include="Shaders\Session7\Session7_Fragment.shader">
-      <Filter>资源文件\Shaders\Session7</Filter>
-    </None>
-    <None Include="Shaders\Session7\Session7_Vertex.shader">
-      <Filter>资源文件\Shaders\Session7</Filter>
-    </None>
-    <None Include="Shaders\Session8\Session8_Fragment.shader">
-      <Filter>资源文件\Shaders\Session8</Filter>
-    </None>
-    <None Include="Shaders\Session8\Session8_Vertex.shader">
-      <Filter>资源文件\Shaders\Session8</Filter>
-    </None>
-    <None Include="Shaders\Session3\Session3_Fragment.shader">
-      <Filter>资源文件\Shaders\Session3</Filter>
-    </None>
-    <None Include="Shaders\Session3\Session3_Vertex.shader">
-      <Filter>资源文件\Shaders\Session3</Filter>
-    </None>
-    <None Include="Shaders\Session9\Session9_Fragment.shader">
-      <Filter>资源文件\Shaders\Session9</Filter>
-    </None>
-    <None Include="Shaders\Session9\Session9_Vertex.shader">
-      <Filter>资源文件\Shaders\Session9</Filter>
-    </None>
-    <None Include="Shaders\Session10\Session10_Fragment.shader">
-      <Filter>资源文件\Shaders\Session10</Filter>
-    </None>
-    <None Include="Shaders\Session10\Session10_Vertex.shader">
-      <Filter>资源文件\Shaders\Session10</Filter>
-    </None>
+    <ClCompile Include="Course\Course1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -156,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="AllCourse.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\VertexItem.h">
+      <Filter>头文件\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
