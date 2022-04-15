@@ -5,27 +5,27 @@ using namespace std;
 OpenGL_Session3::OpenGL_Session3()
 {
 	float vertices[] = {
-	0.5f, 0.5f, 0.0f,   // ÓÒÉÏ½Ç
-	0.5f, -0.5f, 0.0f,  // ÓÒÏÂ½Ç
-	-0.5f, -0.5f, 0.0f, // ×óÏÂ½Ç
-	-0.5f, 0.5f, 0.0f   // ×óÉÏ½Ç
+	0.5f, 0.5f, 0.0f,   // å³ä¸Šè§’
+	0.5f, -0.5f, 0.0f,  // å³ä¸‹è§’
+	-0.5f, -0.5f, 0.0f, // å·¦ä¸‹è§’
+	-0.5f, 0.5f, 0.0f   // å·¦ä¸Šè§’
 	};
-	GLuint indices[] = { // ×¢ÒâË÷Òı´Ó0¿ªÊ¼! 
-	0, 1, 3, // µÚÒ»¸öÈı½ÇĞÎ
-	1, 2, 3  // µÚ¶ş¸öÈı½ÇĞÎ
+	GLuint indices[] = { // æ³¨æ„ç´¢å¼•ä»0å¼€å§‹! 
+	0, 1, 3, // ç¬¬ä¸€ä¸ªä¸‰è§’å½¢
+	1, 2, 3  // ç¬¬äºŒä¸ªä¸‰è§’å½¢
 	};
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
 	glGenBuffers(1, &EBO);
-	// 1. °ó¶¨¶¥µãÊı×é¶ÔÏó
+	// 1. ç»‘å®šé¡¶ç‚¹æ•°ç»„å¯¹è±¡
 	glBindVertexArray(VAO);
-	// 2. °ÑÎÒÃÇµÄ¶¥µãÊı×é¸´ÖÆµ½Ò»¸ö¶¥µã»º³åÖĞ£¬¹©OpenGLÊ¹ÓÃ
+	// 2. æŠŠæˆ‘ä»¬çš„é¡¶ç‚¹æ•°ç»„å¤åˆ¶åˆ°ä¸€ä¸ªé¡¶ç‚¹ç¼“å†²ä¸­ï¼Œä¾›OpenGLä½¿ç”¨
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-	// 3. ¸´ÖÆÎÒÃÇµÄË÷ÒıÊı×éµ½Ò»¸öË÷Òı»º³åÖĞ£¬¹©OpenGLÊ¹ÓÃ
+	// 3. å¤åˆ¶æˆ‘ä»¬çš„ç´¢å¼•æ•°ç»„åˆ°ä¸€ä¸ªç´¢å¼•ç¼“å†²ä¸­ï¼Œä¾›OpenGLä½¿ç”¨
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-	// 4. Éè¶¨¶¥µãÊôĞÔÖ¸Õë
+	// 4. è®¾å®šé¡¶ç‚¹å±æ€§æŒ‡é’ˆ
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GL_FLOAT), (void*)0);
 	glEnableVertexAttribArray(0);
 }
@@ -51,10 +51,10 @@ void OpenGL_Session3::drawView()
 
 	OpenGL_Tools::GetInstance()->UseShader("Session3Shader");
 	glBindVertexArray(VAO);
-	// Ïß¿òÄ£Ê½
+	// çº¿æ¡†æ¨¡å¼
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-	// »Ö¸´Ìî³äÄ£Ê½
+	// æ¢å¤å¡«å……æ¨¡å¼
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	glBindVertexArray(0);
 }

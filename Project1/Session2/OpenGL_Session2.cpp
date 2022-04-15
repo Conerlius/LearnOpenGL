@@ -37,7 +37,7 @@ void OpenGL_Session2::drawView() {
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 	glDisableVertexAttribArray(0);
 }
-// ±àÒëshader
+// ç¼–è¯‘shader
 GLuint OpenGL_Session2::CompileShader() {
 	const char* vertexShaderSource = R"(#version 330 core
 layout(location = 0) in vec3 aPos;
