@@ -1,15 +1,15 @@
-#pragma once
+﻿#pragma once
 #include "../BaseSession.h"
 #include "../stb_image.h"
 
 class OpenGL_Session1 : public BaseSession
 {
 private:
-#if OpenGL_Session1_Use_Array
+//#if OpenGL_Session1_Use_Array
 	GLuint VAO;
-#else
+//#else
 	GLuint VBO;
-#endif
+//#endif
 	GLuint shaderId;
 	GLuint attPos;
 public:

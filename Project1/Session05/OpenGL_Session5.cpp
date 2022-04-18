@@ -1,7 +1,8 @@
-#include "OpenGL_Session5.h"
+ï»¿#include "OpenGL_Session5.h"
 
 OpenGL_Session5::OpenGL_Session5()
-{	
+{
+	_name = u8"ssss";
 }
 
 OpenGL_Session5::~OpenGL_Session5()
@@ -16,8 +17,8 @@ void OpenGL_Session5::Start(ApplicationStart* application)
 	 0.0f,  0.5f, 0.0f
 	};
 
-	unsigned int indices[] = { // ×¢ÒâË÷Òı´Ó0¿ªÊ¼! 
-		0, 1, 2, // µÚÒ»¸öÈı½ÇĞÎ
+	unsigned int indices[] = { // æ³¨æ„ç´¢å¼•ä»0å¼€å§‹! 
+		0, 1, 2, // ç¬¬ä¸€ä¸ªä¸‰è§’å½¢
 	};
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);
@@ -32,11 +33,6 @@ void OpenGL_Session5::Start(ApplicationStart* application)
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 	
 	glEnableVertexAttribArray(0);
-}
-void OpenGL_Session5::processInput(GLFWwindow* window)
-{
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		glfwSetWindowShouldClose(window, true);
 }
 void OpenGL_Session5::drawView()
 {

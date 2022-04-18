@@ -41,8 +41,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -178,8 +179,8 @@
     <None Include="Shaders\BaseVertex.shader" />
     <None Include="Shaders\Session10\Session10_Fragment.shader" />
     <None Include="Shaders\Session10\Session10_Vertex.shader" />
-    <None Include="Shaders\Session3\Session3_Fragment.shader" />
-    <None Include="Shaders\Session3\Session3_Vertex.shader" />
+    <None Include="Shaders\Session03\Session3_Fragment.shader" />
+    <None Include="Shaders\Session03\Session3_Vertex.shader" />
     <None Include="Shaders\Session6\Session6_Fragment.shader" />
     <None Include="Shaders\Session6\Session6_Vertex.shader" />
     <None Include="Shaders\Session7\Session7_Fragment.shader" />
@@ -188,6 +189,9 @@
     <None Include="Shaders\Session8\Session8_Vertex.shader" />
     <None Include="Shaders\Session9\Session9_Fragment.shader" />
     <None Include="Shaders\Session9\Session9_Vertex.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

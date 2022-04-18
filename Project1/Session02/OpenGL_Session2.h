@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "../BaseSession.h"
 
 class OpenGL_Session2 : public BaseSession
@@ -9,7 +9,6 @@ public:
 	OpenGL_Session2();
 	~OpenGL_Session2();
 	void Start(ApplicationStart* application);
-	void processInput(GLFWwindow* window);
 	void drawView();
     
 private:

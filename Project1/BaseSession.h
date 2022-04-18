@@ -11,11 +11,14 @@ class ApplicationStart;
 
 class BaseSession {
 public:
-    BaseSession() {}
+    BaseSession()
+    {
+        _name = "BaseSession";
+    }
 
     virtual ~BaseSession() {}
 
-    virtual string Name(){return "BaseSession";}
+    virtual string Name(){return _name;}
     virtual void Start(ApplicationStart *application) {}
 
     virtual void processInput(GLFWwindow *window)
@@ -25,6 +28,8 @@ public:
     }
 
     virtual void drawView() {}
+public:
+    string _name;
 };
 
 #define REGISTER(className)\

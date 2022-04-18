@@ -18,13 +18,13 @@ public:
         while (getline(infile, myText))
         {
             string content = trim(myText);
-            if (content.find_first_of("Course:") != -1)
+            if (content.find("Course:") != -1)
             {
-                config.DefaultClassIndex = stoi(content.substr(7));
+                config->DefaultClassIndex = stoi(content.substr(7));
             }
-            else if(content.find_first_of("EnableOpenGLCore:") != -1)
+            else if(content.find("EnableOpenGLCore:") != -1)
             {
-                config.EnableOpenGLCore = stoi(content.substr(17))?true:false;
+                config->EnableOpenGLCore = stoi(content.substr(17))?true:false;
             }
             else
             {
@@ -38,10 +38,10 @@ public:
      * \brief 获取单例
      * \return 单例
      */
-    static Configure Instance()
+    static Configure* Instance()
     {
-        static Configure config;
-        return config;
+        static Configure _instance;
+        return &_instance;
     }
 
     static std::string& trim(std::string& s)

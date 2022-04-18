@@ -20,7 +20,7 @@ void ApplicationStart::Configure()
         IsInit = false;
         return;
     }
-    auto courceIndex = "OpenGL_Session" + std::to_string(Configure::Instance().DefaultClassIndex);
+    auto courceIndex = "OpenGL_Session" + std::to_string(Configure::Instance()->DefaultClassIndex);
     m_curSession = (BaseSession*)SessionMgr::getInstance().getClassByName(courceIndex);
     auto windowTitle = "LearnOpenGL--" + m_curSession->Name();
     Window = glfwCreateWindow(800, 600, windowTitle.c_str(), NULL, NULL);
@@ -37,7 +37,7 @@ void ApplicationStart::Configure()
     //窗口大小被调整的回调
     glfwSetFramebufferSizeCallback(Window, Framebuffer_size_callback);
     // 预编译shader
-    // OpenGL_Tools::GetInstance()->CompileShader("Shaders/BaseVertex.shader", "Shaders/BaseFragment.shader", "BaseShader");
+    OpenGL_Tools::GetInstance()->CompileShader("Shaders/BaseVertex.shader", "Shaders/BaseFragment.shader", "BaseShader");
 
     IsInit = true;
 }
@@ -63,7 +63,7 @@ int ApplicationStart::initGLFW()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     // 直接声明使用opengl core
-    if (Configure::Instance().EnableOpenGLCore)
+    if (Configure::Instance()->EnableOpenGLCore)
     {
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     }
