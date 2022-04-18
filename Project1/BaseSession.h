@@ -17,7 +17,11 @@ public:
 
     virtual void Start(ApplicationStart *application) {}
 
-    virtual void processInput(GLFWwindow *window) {}
+    virtual void processInput(GLFWwindow *window)
+    {
+        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+            glfwSetWindowShouldClose(window, true);
+    }
 
     virtual void drawView() {}
 };

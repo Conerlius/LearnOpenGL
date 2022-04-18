@@ -1,1 +1,2 @@
-course:4
+Course:4
+EnableOpenGLCore:1

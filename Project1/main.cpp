@@ -2,6 +2,7 @@
 #include <fstream>
 
 #include "ApplicationStart.h"
+#include "Configure.h"
 
 std::string& trim(std::string&);
 
@@ -22,21 +23,12 @@ int main(int argc, char* argv[]) {
 	}
 	else
 	{
-		string myText;
-		ifstream infile; 
-		infile.open("config.txt");
-		while (getline (infile, myText)) {
-			string content = trim(myText);
-			if (content.find_first_of("course:") != -1)
-			{
-				courceIndex = "OpenGL_Session" + content.substr(7);
-			}
-		}
-		infile.close();
+		Configure::LoadConfigure();
 	}
 	// 启动程序
 	ApplicationStart* application = new ApplicationStart();
-	int result = application->Start(courceIndex);
+	application->Configure();
+	int result = application->Start();
 	return result;
 }
 

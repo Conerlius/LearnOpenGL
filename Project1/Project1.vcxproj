@@ -41,7 +41,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -138,18 +138,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationStart.h" />
+    <ClInclude Include="Configure.h" />
     <ClInclude Include="OpenGl_Tools.h" />
     <ClInclude Include="RegisterAction.h" />
     <ClInclude Include="Session10\OpenGL_Session10.h" />
-    <ClInclude Include="Session1\OpenGL_Session1.h" />
-    <ClInclude Include="Session2\OpenGL_Session2.h" />
-    <ClInclude Include="Session3\OpenGL_Session3.h" />
-    <ClInclude Include="Session4\OpenGL_Session4.h" />
-    <ClInclude Include="Session5\OpenGL_Session5.h" />
-    <ClInclude Include="Session6\OpenGL_Session6.h" />
-    <ClInclude Include="Session7\OpenGL_Session7.h" />
-    <ClInclude Include="Session8\OpenGL_Session8.h" />
-    <ClInclude Include="Session9\OpenGL_Session9.h" />
+    <ClInclude Include="Session01\OpenGL_Session1.h" />
+    <ClInclude Include="Session02\OpenGL_Session2.h" />
+    <ClInclude Include="Session03\OpenGL_Session3.h" />
+    <ClInclude Include="Session04\OpenGL_Session4.h" />
+    <ClInclude Include="Session05\OpenGL_Session5.h" />
+    <ClInclude Include="Session06\OpenGL_Session6.h" />
+    <ClInclude Include="Session07\OpenGL_Session7.h" />
+    <ClInclude Include="Session08\OpenGL_Session8.h" />
+    <ClInclude Include="Session09\OpenGL_Session9.h" />
     <ClInclude Include="SessionMgr.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
@@ -161,15 +162,15 @@
     <ClCompile Include="glad.c" />
     <ClCompile Include="OpenGl_Tools.cpp" />
     <ClCompile Include="Session10\OpenGL_Session10.cpp" />
-    <ClCompile Include="Session1\OpenGL_Session1.cpp" />
-    <ClCompile Include="Session2\OpenGL_Session2.cpp" />
-    <ClCompile Include="Session3\OpenGL_Session3.cpp" />
-    <ClCompile Include="Session4\OpenGL_Session4.cpp" />
-    <ClCompile Include="Session5\OpenGL_Session5.cpp" />
-    <ClCompile Include="Session6\OpenGL_Session6.cpp" />
-    <ClCompile Include="Session7\OpenGL_Session7.cpp" />
-    <ClCompile Include="Session8\OpenGL_Session8.cpp" />
-    <ClCompile Include="Session9\OpenGL_Session9.cpp" />
+    <ClCompile Include="Session01\OpenGL_Session1.cpp" />
+    <ClCompile Include="Session02\OpenGL_Session2.cpp" />
+    <ClCompile Include="Session03\OpenGL_Session3.cpp" />
+    <ClCompile Include="Session04\OpenGL_Session4.cpp" />
+    <ClCompile Include="Session05\OpenGL_Session5.cpp" />
+    <ClCompile Include="Session06\OpenGL_Session6.cpp" />
+    <ClCompile Include="Session07\OpenGL_Session7.cpp" />
+    <ClCompile Include="Session08\OpenGL_Session8.cpp" />
+    <ClCompile Include="Session09\OpenGL_Session9.cpp" />
     <ClCompile Include="SessionMgr.cpp" />
   </ItemGroup>
   <ItemGroup>

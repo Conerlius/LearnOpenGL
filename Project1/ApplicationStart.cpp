@@ -1,28 +1,41 @@
 #include <iostream>
 #include "ApplicationStart.h"
-//#include "Session1/OpenGL_Session1.h"
-//#include "Session2/OpenGL_Session2.h"
-//#include "Session3/OpenGL_Session3.h"
-//#include "Session4/OpenGL_Session4.h"
-//#include "Session5/OpenGL_Session5.h"
-//#include "Session6/OpenGL_Session6.h"
-//#include "Session7/OpenGL_Session7.h"
-//#include "Session8/OpenGL_Session8.h"
-#include "Session9/OpenGL_Session9.h"
-#include "Session10/OpenGL_Session10.h"
+#include "Configure.h"
 
 using namespace std;
 
-// 启动
-int ApplicationStart::Start(string courceIndex)
+ApplicationStart::ApplicationStart()
 {
-	CourceIndex = courceIndex;
-	if (initGLFW() != 0) {
-		return -1;
-	}
-	int result = drawWindow();
-	return result;
+	IsInit = false;
 }
+
+ApplicationStart::~ApplicationStart()
+{
+}
+
+void ApplicationStart::Configure()
+{
+	if (initGLFW() != 0) {
+		IsInit = false;
+		return;
+	}
+	Window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
+	if (Window == NULL) {
+		glfwTerminate();
+		return;
+	}
+	glfwMakeContextCurrent(Window);
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+		return;
+	}
+	//窗口大小被调整的回调
+	glfwSetFramebufferSizeCallback(Window, Framebuffer_size_callback);
+	// 预编译shader
+	// OpenGL_Tools::GetInstance()->CompileShader("Shaders/BaseVertex.shader", "Shaders/BaseFragment.shader", "BaseShader");
+	
+	IsInit = true;
+}
+
 // 设置窗口的维度
 // 如果不重置的话，导致opengl画的界面没有全屏
 void ApplicationStart::Framebuffer_size_callback(GLFWwindow* window, int width, int height) {
@@ -30,12 +43,6 @@ void ApplicationStart::Framebuffer_size_callback(GLFWwindow* window, int width, 
 	glViewport(0, 0, width, height);
 }
 
-ApplicationStart::ApplicationStart()
-{
-}
-ApplicationStart::~ApplicationStart()
-{
-}
 // 初始化GLFW
 int ApplicationStart::initGLFW() {
 	if (!glfwInit()) {
@@ -47,55 +54,45 @@ int ApplicationStart::initGLFW() {
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	// 直接声明使用opengl core
-	// glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	// 如果不想显性创建一个VAO的话，就开启这个
-	// https://blog.csdn.net/McQueen_LT/article/details/119515149
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_COMPAT_PROFILE);
+	if (Configure::Instance().EnableOpenGLCore)
+	{
+		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	}
+	else
+	{
+		// 如果不想显性创建一个VAO的话，就开启这个
+		// https://blog.csdn.net/McQueen_LT/article/details/119515149
+		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_COMPAT_PROFILE);
+	}
 #if MAC_OS
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
 	return 0;
 }
 
+// 启动
+int ApplicationStart::Start()
+{
+	auto courceIndex = "OpenGL_Session" + std::to_string(Configure::Instance().DefaultClassIndex);
+	m_curSession = (BaseSession*)SessionMgr::getInstance().getClassByName(courceIndex);
+	m_curSession->Start(this);
+	// 画
+	int result = drawWindow();
+	return result;
+}
+
 // 绘制展示页面
 int ApplicationStart::drawWindow() {
-	GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
-	if (window == NULL) {
-		glfwTerminate();
-		return 1;
-	}
-	glfwMakeContextCurrent(window);
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-		return 1;
-	}
-	//窗口大小被调整的回调
-	glfwSetFramebufferSizeCallback(window, Framebuffer_size_callback);
-	// 预编译shader
-	OpenGL_Tools::GetInstance()->CompileShader("Shaders/BaseVertex.shader", "Shaders/BaseFragment.shader", "BaseShader");
-	while (!glfwWindowShouldClose(window))
+	while (!glfwWindowShouldClose(Window))
 	{
-		// 主页
-		if (m_curSession == NULL) {
-			this->DrawAllSessions();
-		}
-		else {
-			this->DrawBackMenu();
-			m_curSession->processInput(window);
-			m_curSession->drawView();
-		}
+		m_curSession->processInput(Window);
+		m_curSession->drawView();
 		// 检查触发事件
 		glfwPollEvents();
 		// 交换颜色缓冲
-		glfwSwapBuffers(window);
+		glfwSwapBuffers(Window);
 	}
 	// 销毁窗口
 	glfwTerminate();
 	return 0;
-}
-void ApplicationStart::DrawAllSessions() {
-	m_curSession = (BaseSession*)SessionMgr::getInstance().getClassByName(CourceIndex);
-	m_curSession->Start(this);
-}
-void ApplicationStart::DrawBackMenu() {
-
 }

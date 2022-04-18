@@ -36,12 +36,6 @@ void OpenGL_Session1::Start(ApplicationStart* application)
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	#endif
 }
-
-void OpenGL_Session1::processInput(GLFWwindow* window)
-{
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		glfwSetWindowShouldClose(window, true);
-}
 // 绘制
 
 void OpenGL_Session1::drawView() {
