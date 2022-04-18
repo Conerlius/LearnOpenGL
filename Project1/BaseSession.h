@@ -15,6 +15,7 @@ public:
 
     virtual ~BaseSession() {}
 
+    virtual string Name(){return "BaseSession";}
     virtual void Start(ApplicationStart *application) {}
 
     virtual void processInput(GLFWwindow *window)
