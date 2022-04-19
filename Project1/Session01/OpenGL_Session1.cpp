@@ -4,14 +4,6 @@
 
 using namespace std;
 
-
-// 只是绘制一个三角形
-OpenGL_Session1::OpenGL_Session1() {
-	_name = u8"简单三角形绘制";
-}
-OpenGL_Session1::~OpenGL_Session1() {
-}
-
 // 声明一下要使用的VAO和VBO
 // 使用无符号short性能更优
 void OpenGL_Session1::Start(ApplicationStart* application)

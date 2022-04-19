@@ -2,15 +2,6 @@
 
 using namespace std;
 
-OpenGL_Session3::OpenGL_Session3()
-{
-	_name= u8"简单实用 buffer";
-}
-
-OpenGL_Session3::~OpenGL_Session3()
-{
-	OpenGL_Tools::GetInstance()->CompileShader("Shaders/Session03/Session3_Vertex.shader", "Shaders/Session03/Session3_Fragment.shader", "Session3Shader");
-}
 
 void OpenGL_Session3::Start(ApplicationStart* application)
 {

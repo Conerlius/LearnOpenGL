@@ -4,8 +4,7 @@
 class OpenGL_Session10 : public BaseSession
 {
 public:
-	OpenGL_Session10();
-	~OpenGL_Session10();
+	GENERATE_CREATE(OpenGL_Session10, "立方体纹理")
 	void Start(ApplicationStart* application);
 	void drawView();
 protected:

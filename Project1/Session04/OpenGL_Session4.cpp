@@ -1,13 +1,5 @@
 ﻿#include "OpenGL_Session4.h"
 
-OpenGL_Session4::OpenGL_Session4()
-{
-	_name = u8"简单的立方体";
-}
-
-OpenGL_Session4::~OpenGL_Session4()
-{
-}
 
 void OpenGL_Session4::Start(ApplicationStart* application)
 {

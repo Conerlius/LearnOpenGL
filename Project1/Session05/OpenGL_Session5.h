@@ -4,8 +4,7 @@
 class OpenGL_Session5 : public BaseSession
 {
 public:
-	OpenGL_Session5();
-	~OpenGL_Session5();
+	GENERATE_CREATE(OpenGL_Session5, "简单实用 buffer 同课3")
 	void Start(ApplicationStart* application);
 	void drawView();
     

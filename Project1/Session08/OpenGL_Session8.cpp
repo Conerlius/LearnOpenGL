@@ -1,13 +1,5 @@
 ﻿#include "OpenGL_Session8.h"
 
-OpenGL_Session8::OpenGL_Session8()
-{
-	_name=u8"纹理使用";
-}
-
-OpenGL_Session8::~OpenGL_Session8()
-{
-}
 
 void OpenGL_Session8::Start(ApplicationStart* application)
 {

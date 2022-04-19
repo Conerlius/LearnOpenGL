@@ -4,8 +4,7 @@
 class OpenGL_Session9 : public BaseSession
 {
 public:
-	OpenGL_Session9();
-	~OpenGL_Session9();
+	GENERATE_CREATE(OpenGL_Session9, "MVP的基本使用")
 	void Start(ApplicationStart* application);
 	void drawView();
 protected:

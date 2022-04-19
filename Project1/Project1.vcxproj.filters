@@ -81,37 +81,40 @@
     <ClCompile Include="OpenGl_Tools.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Session1\OpenGL_Session1.cpp">
-      <Filter>源文件\Session1</Filter>
-    </ClCompile>
-    <ClCompile Include="Session2\OpenGL_Session2.cpp">
-      <Filter>源文件\Session2</Filter>
-    </ClCompile>
-    <ClCompile Include="Session3\OpenGL_Session3.cpp">
-      <Filter>源文件\Session3</Filter>
-    </ClCompile>
-    <ClCompile Include="Session4\OpenGL_Session4.cpp">
-      <Filter>源文件\Session4</Filter>
-    </ClCompile>
-    <ClCompile Include="Session5\OpenGL_Session5.cpp">
-      <Filter>源文件\Session5</Filter>
-    </ClCompile>
-    <ClCompile Include="Session6\OpenGL_Session6.cpp">
-      <Filter>源文件\Session6</Filter>
-    </ClCompile>
-    <ClCompile Include="Session7\OpenGL_Session7.cpp">
-      <Filter>源文件\Session7</Filter>
-    </ClCompile>
-    <ClCompile Include="Session8\OpenGL_Session8.cpp">
-      <Filter>源文件\Session8</Filter>
-    </ClCompile>
-    <ClCompile Include="Session9\OpenGL_Session9.cpp">
-      <Filter>源文件\Session9</Filter>
-    </ClCompile>
     <ClCompile Include="Session10\OpenGL_Session10.cpp">
       <Filter>源文件\Session10</Filter>
     </ClCompile>
     <ClCompile Include="SessionMgr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Session01\OpenGL_Session1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Session02\OpenGL_Session2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Session03\OpenGL_Session3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Session04\OpenGL_Session4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Session05\OpenGL_Session5.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Session06\OpenGL_Session6.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Session07\OpenGL_Session7.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Session08\OpenGL_Session8.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Session09\OpenGL_Session9.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Session11\OpenGL_Session11.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -122,38 +125,11 @@
     <ClInclude Include="OpenGl_Tools.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Session1\OpenGL_Session1.h">
-      <Filter>源文件\Session1</Filter>
-    </ClInclude>
-    <ClInclude Include="Session2\OpenGL_Session2.h">
-      <Filter>源文件\Session2</Filter>
-    </ClInclude>
-    <ClInclude Include="Session3\OpenGL_Session3.h">
-      <Filter>源文件\Session3</Filter>
-    </ClInclude>
-    <ClInclude Include="Session4\OpenGL_Session4.h">
-      <Filter>源文件\Session4</Filter>
-    </ClInclude>
-    <ClInclude Include="Session5\OpenGL_Session5.h">
-      <Filter>源文件\Session5</Filter>
-    </ClInclude>
-    <ClInclude Include="Session6\OpenGL_Session6.h">
-      <Filter>源文件\Session6</Filter>
-    </ClInclude>
-    <ClInclude Include="Session7\OpenGL_Session7.h">
-      <Filter>源文件\Session7</Filter>
-    </ClInclude>
-    <ClInclude Include="Session8\OpenGL_Session8.h">
-      <Filter>源文件\Session8</Filter>
-    </ClInclude>
     <ClInclude Include="stb_image.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Shader.h">
       <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Session9\OpenGL_Session9.h">
-      <Filter>源文件\Session9</Filter>
     </ClInclude>
     <ClInclude Include="Session10\OpenGL_Session10.h">
       <Filter>源文件\Session10</Filter>
@@ -164,6 +140,39 @@
     <ClInclude Include="SessionMgr.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Configure.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Session01\OpenGL_Session1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Session02\OpenGL_Session2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Session03\OpenGL_Session3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Session04\OpenGL_Session4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Session05\OpenGL_Session5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Session06\OpenGL_Session6.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Session07\OpenGL_Session7.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Session08\OpenGL_Session8.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Session09\OpenGL_Session9.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Session11\OpenGL_Session11.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\BaseFragment.shader">
@@ -172,41 +181,21 @@
     <None Include="Shaders\BaseVertex.shader">
       <Filter>资源文件\Shaders</Filter>
     </None>
-    <None Include="Shaders\Session6\Session6_Fragment.shader">
-      <Filter>资源文件\Shaders\Session6</Filter>
-    </None>
-    <None Include="Shaders\Session6\Session6_Vertex.shader">
-      <Filter>资源文件\Shaders\Session6</Filter>
-    </None>
-    <None Include="Shaders\Session7\Session7_Fragment.shader">
-      <Filter>资源文件\Shaders\Session7</Filter>
-    </None>
-    <None Include="Shaders\Session7\Session7_Vertex.shader">
-      <Filter>资源文件\Shaders\Session7</Filter>
-    </None>
-    <None Include="Shaders\Session8\Session8_Fragment.shader">
-      <Filter>资源文件\Shaders\Session8</Filter>
-    </None>
-    <None Include="Shaders\Session8\Session8_Vertex.shader">
-      <Filter>资源文件\Shaders\Session8</Filter>
-    </None>
-    <None Include="Shaders\Session3\Session3_Fragment.shader">
-      <Filter>资源文件\Shaders\Session3</Filter>
-    </None>
-    <None Include="Shaders\Session3\Session3_Vertex.shader">
-      <Filter>资源文件\Shaders\Session3</Filter>
-    </None>
-    <None Include="Shaders\Session9\Session9_Fragment.shader">
-      <Filter>资源文件\Shaders\Session9</Filter>
-    </None>
-    <None Include="Shaders\Session9\Session9_Vertex.shader">
-      <Filter>资源文件\Shaders\Session9</Filter>
-    </None>
     <None Include="Shaders\Session10\Session10_Fragment.shader">
       <Filter>资源文件\Shaders\Session10</Filter>
     </None>
     <None Include="Shaders\Session10\Session10_Vertex.shader">
       <Filter>资源文件\Shaders\Session10</Filter>
     </None>
+    <None Include="Shaders\Session03\Session3_Fragment.shader" />
+    <None Include="Shaders\Session03\Session3_Vertex.shader" />
+    <None Include="Shaders\Session06\Session6_Fragment.shader" />
+    <None Include="Shaders\Session06\Session6_Vertex.shader" />
+    <None Include="Shaders\Session07\Session7_Fragment.shader" />
+    <None Include="Shaders\Session07\Session7_Vertex.shader" />
+    <None Include="Shaders\Session08\Session8_Fragment.shader" />
+    <None Include="Shaders\Session08\Session8_Vertex.shader" />
+    <None Include="Shaders\Session09\Session9_Fragment.shader" />
+    <None Include="Shaders\Session09\Session9_Vertex.shader" />
   </ItemGroup>
 </Project>

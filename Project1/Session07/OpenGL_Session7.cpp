@@ -1,14 +1,5 @@
 ﻿#include "OpenGL_Session7.h"
 
-OpenGL_Session7::OpenGL_Session7()
-{
-	_name=u8"顶点着色";
-}
-
-OpenGL_Session7::~OpenGL_Session7()
-{
-}
-
 void OpenGL_Session7::Start(ApplicationStart* application)
 {
 	// 预编译shader

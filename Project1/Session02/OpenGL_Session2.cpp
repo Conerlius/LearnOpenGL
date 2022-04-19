@@ -2,11 +2,6 @@
 
 using namespace std;
 
-OpenGL_Session2::OpenGL_Session2() {
-	_name=u8"简单实用 shader";
-}
-OpenGL_Session2::~OpenGL_Session2() {
-}
 void OpenGL_Session2::Start(ApplicationStart* application)
 {
 	float vertices[] = {

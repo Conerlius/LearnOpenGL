@@ -1,13 +1,5 @@
 ﻿#include "OpenGL_Session5.h"
 
-OpenGL_Session5::OpenGL_Session5()
-{
-	_name = u8"简单实用 buffer 同课3";
-}
-
-OpenGL_Session5::~OpenGL_Session5()
-{
-}
 
 void OpenGL_Session5::Start(ApplicationStart* application)
 {

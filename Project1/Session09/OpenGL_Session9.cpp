@@ -1,13 +1,5 @@
 ﻿#include "OpenGL_Session9.h"
 
-OpenGL_Session9::OpenGL_Session9()
-{
-	_name=u8"MVP的基本使用";
-}
-
-OpenGL_Session9::~OpenGL_Session9()
-{
-}
 
 void OpenGL_Session9::Start(ApplicationStart* application)
 {

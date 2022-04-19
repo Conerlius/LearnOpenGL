@@ -4,8 +4,7 @@
 class OpenGL_Session8 : public BaseSession
 {
 public:
-	OpenGL_Session8();
-	~OpenGL_Session8();
+	GENERATE_CREATE(OpenGL_Session8, "纹理使用")
 	void Start(ApplicationStart* application);
 	void drawView();
     

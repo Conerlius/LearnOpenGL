@@ -4,8 +4,7 @@
 class OpenGL_Session6 : public BaseSession
 {
 public:
-	OpenGL_Session6();
-	~OpenGL_Session6();
+	GENERATE_CREATE(OpenGL_Session6, "更新uniform")
 	void Start(ApplicationStart* application);
 	void drawView();
     

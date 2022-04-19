@@ -4,8 +4,7 @@
 class OpenGL_Session7 : public BaseSession
 {
 public:
-	OpenGL_Session7();
-	~OpenGL_Session7();
+	GENERATE_CREATE(OpenGL_Session7, "顶点着色")
 	void Start(ApplicationStart* application);
 	void drawView();
     

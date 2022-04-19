@@ -13,8 +13,7 @@ private:
 	GLuint shaderId;
 	GLuint attPos;
 public:
-	OpenGL_Session1();
-	~OpenGL_Session1();
+	GENERATE_CREATE(OpenGL_Session1, "简单三角形绘制")
 	void Start(ApplicationStart* application);
 	void drawView();
     

@@ -2,6 +2,10 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <iostream>
+
+
+
 using namespace std;
 
 OpenGL_Tools::OpenGL_Tools()
@@ -41,6 +45,17 @@ GLuint OpenGL_Tools::UseShader(string name)
 	}
 	glUseProgram(programId);
 	return programId;
+}
+Shader OpenGL_Tools::CompileShader1(std::string name)
+{
+	string session = name.substr(0,name.length()-6);
+	std::ostringstream buffer;
+	buffer<<"Shaders/"<<session<<"/"<<session<<"_Vertex.shader";
+	string v_path = buffer.str();
+	std::ostringstream fbuffer;
+	fbuffer<<"Shaders/"<<session<<"/"<<session<<"_Fragment.shader";
+	string f_path = fbuffer.str();
+	return Shader(v_path.c_str(),f_path.c_str());
 }
 // 编译shader
 // vertex_path	vertex文件路径

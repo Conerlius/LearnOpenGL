@@ -6,8 +6,7 @@ class OpenGL_Session2 : public BaseSession
 private:
 	GLuint VAO, VBO, shaderId;
 public:
-	OpenGL_Session2();
-	~OpenGL_Session2();
+	GENERATE_CREATE(OpenGL_Session2, "简单实用 shader")
 	void Start(ApplicationStart* application);
 	void drawView();
     

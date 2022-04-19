@@ -4,8 +4,7 @@
 class OpenGL_Session3:public BaseSession
 {
 public:
-	OpenGL_Session3();
-	~OpenGL_Session3();
+	GENERATE_CREATE(OpenGL_Session3, "简单实用 buffer")
 	void Start(ApplicationStart* application);
 	void drawView();
     

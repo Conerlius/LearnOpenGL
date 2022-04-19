@@ -41,7 +41,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
@@ -85,6 +85,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -99,6 +100,8 @@
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,6 +155,7 @@
     <ClInclude Include="Session07\OpenGL_Session7.h" />
     <ClInclude Include="Session08\OpenGL_Session8.h" />
     <ClInclude Include="Session09\OpenGL_Session9.h" />
+    <ClInclude Include="Session11\OpenGL_Session11.h" />
     <ClInclude Include="SessionMgr.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
@@ -172,6 +176,7 @@
     <ClCompile Include="Session07\OpenGL_Session7.cpp" />
     <ClCompile Include="Session08\OpenGL_Session8.cpp" />
     <ClCompile Include="Session09\OpenGL_Session9.cpp" />
+    <ClCompile Include="Session11\OpenGL_Session11.cpp" />
     <ClCompile Include="SessionMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +197,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="config.txt" />
+    <Content Include="Shaders\Session11\Session11_Vertex.shader" />
+    <Content Include="Shaders\Session11\Session11_Fragment.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

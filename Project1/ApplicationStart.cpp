@@ -1,5 +1,8 @@
-#include <iostream>
+﻿#include <iostream>
 #include "ApplicationStart.h"
+
+#include <format>
+
 #include "Configure.h"
 
 using namespace std;
@@ -22,7 +25,7 @@ void ApplicationStart::Configure()
     }
     auto courceIndex = "OpenGL_Session" + std::to_string(Configure::Instance()->DefaultClassIndex);
     m_curSession = (BaseSession*)SessionMgr::getInstance().getClassByName(courceIndex);
-    auto windowTitle = "LearnOpenGL--" + m_curSession->Name();
+    const string windowTitle = "LearnOpenGL--"+m_curSession->Name();
     Window = glfwCreateWindow(800, 600, windowTitle.c_str(), NULL, NULL);
     if (Window == NULL)
     {

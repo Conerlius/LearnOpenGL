@@ -1,14 +1,5 @@
 ﻿#include "OpenGL_Session10.h"
 
-OpenGL_Session10::OpenGL_Session10()
-{
-	_name=u8"立方体纹理";
-}
-
-OpenGL_Session10::~OpenGL_Session10()
-{
-}
-
 void OpenGL_Session10::Start(ApplicationStart* application)
 {
 	this->texture1 = OpenGL_Tools::GetInstance()->LoadTexture("container.jpg");

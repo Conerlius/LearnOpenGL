@@ -1,14 +1,5 @@
 ﻿#include "OpenGL_Session6.h"
 
-OpenGL_Session6::OpenGL_Session6()
-{
-	_name=u8"更新uniform";
-}
-
-OpenGL_Session6::~OpenGL_Session6()
-{
-}
-
 void OpenGL_Session6::Start(ApplicationStart* application)
 {
 	// 预编译shader

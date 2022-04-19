@@ -4,8 +4,7 @@
 class OpenGL_Session4 : public BaseSession
 {
 public:
-	OpenGL_Session4();
-	~OpenGL_Session4();
+	GENERATE_CREATE(OpenGL_Session4, "简单的立方体")
 	void Start(ApplicationStart* application);
 	void drawView();
     
