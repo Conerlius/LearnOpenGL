@@ -1,7 +1,8 @@
-#include "OpenGL_Session6.h"
+ï»¿#include "OpenGL_Session6.h"
 
 OpenGL_Session6::OpenGL_Session6()
 {
+	_name=u8"æ›´æ–°uniform";
 }
 
 OpenGL_Session6::~OpenGL_Session6()
@@ -10,16 +11,16 @@ OpenGL_Session6::~OpenGL_Session6()
 
 void OpenGL_Session6::Start(ApplicationStart* application)
 {
-	// Ô¤±àÒëshader
-	OpenGL_Tools::GetInstance()->CompileShader("Shaders/Session6/Session6_Vertex.shader", "Shaders/Session6/Session6_Fragment.shader", "Session6Shader");
+	// é¢„ç¼–è¯‘shader
+	OpenGL_Tools::GetInstance()->CompileShader("Shaders/Session06/Session6_Vertex.shader", "Shaders/Session06/Session6_Fragment.shader", "Session6Shader");
 	float vertices[] = {
 	-0.5f, -0.5f, 0.0f,
 	 0.5f, -0.5f, 0.0f,
 	 0.0f,  0.5f, 0.0f
 	};
 
-	unsigned int indices[] = { // ×¢ÒâË÷Òý´Ó0¿ªÊ¼! 
-		0, 1, 2, // µÚÒ»¸öÈý½ÇÐÎ
+	unsigned int indices[] = { // æ³¨æ„ç´¢å¼•ä»Ž0å¼€å§‹! 
+		0, 1, 2, // ç¬¬ä¸€ä¸ªä¸‰è§’å½¢
 	};
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);
@@ -35,27 +36,19 @@ void OpenGL_Session6::Start(ApplicationStart* application)
 	
 	glEnableVertexAttribArray(0);
 }
-void OpenGL_Session6::processInput(GLFWwindow* window)
-{
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		glfwSetWindowShouldClose(window, true);
-}
 void OpenGL_Session6::drawView()
 {
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	glBindVertexArray(VAO);
-
 	GLuint shaderProgram = OpenGL_Tools::GetInstance()->UseShader("Session6Shader");
 
-	// ¸üÐÂuniformÑÕÉ«
+	// æ›´æ–°uniformé¢œè‰²
 	float timeValue = glfwGetTime();
 	float greenValue = sin(timeValue) / 2.0f + 0.5f;
 	int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
 	glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 
 	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
-	glBindVertexArray(0);
-
+	// glDisableVertexAttribArray(VAO);
 }

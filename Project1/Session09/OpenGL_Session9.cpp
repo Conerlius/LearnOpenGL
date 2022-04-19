@@ -1,7 +1,8 @@
-#include "OpenGL_Session9.h"
+ï»¿#include "OpenGL_Session9.h"
 
 OpenGL_Session9::OpenGL_Session9()
 {
+	_name=u8"MVPçš„åŸºæœ¬ä½¿ç”¨";
 }
 
 OpenGL_Session9::~OpenGL_Session9()
@@ -10,8 +11,8 @@ OpenGL_Session9::~OpenGL_Session9()
 
 void OpenGL_Session9::Start(ApplicationStart* application)
 {
-	// Ô¤±àÒëshader
-	OpenGL_Tools::GetInstance()->CompileShader("Shaders/Session9/Session9_Vertex.shader", "Shaders/Session9/Session9_Fragment.shader", "Session9Shader");
+	// é¢„ç¼–è¯‘shader
+	OpenGL_Tools::GetInstance()->CompileShader("Shaders/Session09/Session9_Vertex.shader", "Shaders/Session09/Session9_Fragment.shader", "Session9Shader");
 
 	static const GLfloat g_vertex_buffer_data[] = {
 	-1.0f,-1.0f,-1.0f, // triangle 1 : begin
@@ -97,9 +98,8 @@ void OpenGL_Session9::Start(ApplicationStart* application)
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
 
-	// ¶¨µã
+	// å®šç‚¹
 	glEnableVertexAttribArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GL_FLOAT), (void*)0);
 
 	GLuint colorbuffer;
@@ -107,7 +107,6 @@ void OpenGL_Session9::Start(ApplicationStart* application)
 	glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(g_color_buffer_data), g_color_buffer_data, GL_STATIC_DRAW);
 	glEnableVertexAttribArray(1);
-	glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
 	glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,0,(void*)0);
 
 	glm::mat4 Projection = glm::perspective(glm::radians(45.0f), 4.0f / 3.0f, 0.1f, 100.0f);
@@ -124,11 +123,7 @@ void OpenGL_Session9::Start(ApplicationStart* application)
 	GLuint MatrixID = glGetUniformLocation(shaderProgram, "MVP");
 	glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &mvp[0][0]);
 }
-void OpenGL_Session9::processInput(GLFWwindow* window)
-{
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		glfwSetWindowShouldClose(window, true);
-}
+
 void OpenGL_Session9::drawView()
 {
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);

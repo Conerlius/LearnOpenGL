@@ -1,7 +1,8 @@
-#include "OpenGL_Session8.h"
+ï»¿#include "OpenGL_Session8.h"
 
 OpenGL_Session8::OpenGL_Session8()
 {
+	_name=u8"çº¹ç†ä½¿ç”¨";
 }
 
 OpenGL_Session8::~OpenGL_Session8()
@@ -10,21 +11,21 @@ OpenGL_Session8::~OpenGL_Session8()
 
 void OpenGL_Session8::Start(ApplicationStart* application)
 {
-	// Ô¤±àÒëshader
-	OpenGL_Tools::GetInstance()->CompileShader("Shaders/Session8/Session8_Vertex.shader", "Shaders/Session8/Session8_Fragment.shader", "Session8Shader");
-	// ¼ÓÔØÍ¼Æ¬
+	// é¢„ç¼–è¯‘shader
+	OpenGL_Tools::GetInstance()->CompileShader("Shaders/Session08/Session8_Vertex.shader", "Shaders/Session08/Session8_Fragment.shader", "Session8Shader");
+	// åŠ è½½å›¾ç‰‡
 	texture1 = OpenGL_Tools::GetInstance()->LoadTexture("container.jpg");
 	texture2 = OpenGL_Tools::GetInstance()->LoadTexture("awesomeface.png");
 	float vertices[] = {
-		//     ---- Î»ÖÃ ----       ---- ÑÕÉ« ----     - ÎÆÀí×ø±ê -
-			 0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // ÓÒÉÏ
-			 0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // ÓÒÏÂ
-			-0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // ×óÏÂ
-			-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // ×óÉÏ
+		//     ---- ä½ç½® ----       ---- é¢œè‰² ----     - çº¹ç†åæ ‡ -
+			 0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // å³ä¸Š
+			 0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // å³ä¸‹
+			-0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // å·¦ä¸‹
+			-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // å·¦ä¸Š
 	};
-	unsigned int indices[] = { // ×¢ÒâË÷Òı´Ó0¿ªÊ¼! 
-		0, 1, 3, // µÚÒ»¸öÈı½ÇĞÎ
-		1, 2, 3, // µÚ¶ş¸öÈı½ÇĞÎ
+	unsigned int indices[] = { // æ³¨æ„ç´¢å¼•ä»0å¼€å§‹! 
+		0, 1, 3, // ç¬¬ä¸€ä¸ªä¸‰è§’å½¢
+		1, 2, 3, // ç¬¬äºŒä¸ªä¸‰è§’å½¢
 	};
 
 	glGenVertexArrays(1, &VAO);
@@ -33,10 +34,10 @@ void OpenGL_Session8::Start(ApplicationStart* application)
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-	// ¶¨µã
+	// å®šç‚¹
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GL_FLOAT), (void*)0);
 	glEnableVertexAttribArray(0);
-	// ÑÕÉ«
+	// é¢œè‰²
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GL_FLOAT), (void*)(3 * sizeof(GL_FLOAT)));
 	glEnableVertexAttribArray(1);
 	// uv
@@ -48,28 +49,24 @@ void OpenGL_Session8::Start(ApplicationStart* application)
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 }
-void OpenGL_Session8::processInput(GLFWwindow* window)
-{
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		glfwSetWindowShouldClose(window, true);
-}
+
 void OpenGL_Session8::drawView()
 {
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	// ²»ĞèÒªÒ²ÄÜÉúĞ§£¬Õâ¸öÒª²éÒ»ÏÂ
+	// ä¸éœ€è¦ä¹Ÿèƒ½ç”Ÿæ•ˆï¼Œè¿™ä¸ªè¦æŸ¥ä¸€ä¸‹
 	// glBindTexture(GL_TEXTURE_2D, texture1);
-	//glActiveTexture(GL_TEXTURE0);
+	// glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture1);
-	//glActiveTexture(GL_TEXTURE1);
-	//glBindTexture(GL_TEXTURE_2D, texture2);
+	// glActiveTexture(GL_TEXTURE1);
+	// glBindTexture(GL_TEXTURE_2D, texture2);
 	glBindVertexArray(VAO);
 
 	GLuint shaderProgram = OpenGL_Tools::GetInstance()->UseShader("Session8Shader");
-	//ourShader.use(); // ±ğÍü¼ÇÔÚ¼¤»î×ÅÉ«Æ÷Ç°ÏÈÉèÖÃuniform£¡
-	//glUniform1i(glGetUniformLocation(shaderProgram, "texture1"), 0); // ÊÖ¶¯ÉèÖÃ
-	//glUniform1i(glGetUniformLocation(shaderProgram, "texture2"), 1); // »òÕßÊ¹ÓÃ×ÅÉ«Æ÷ÀàÉèÖÃ
+	//ourShader.use(); // åˆ«å¿˜è®°åœ¨æ¿€æ´»ç€è‰²å™¨å‰å…ˆè®¾ç½®uniformï¼
+	//glUniform1i(glGetUniformLocation(shaderProgram, "texture1"), 0); // æ‰‹åŠ¨è®¾ç½®
+	//glUniform1i(glGetUniformLocation(shaderProgram, "texture2"), 1); // æˆ–è€…ä½¿ç”¨ç€è‰²å™¨ç±»è®¾ç½®
 
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);

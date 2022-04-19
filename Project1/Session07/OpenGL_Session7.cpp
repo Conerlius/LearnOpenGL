@@ -1,7 +1,8 @@
-#include "OpenGL_Session7.h"
+ï»¿#include "OpenGL_Session7.h"
 
 OpenGL_Session7::OpenGL_Session7()
 {
+	_name=u8"é¡¶ç‚¹ç€è‰²";
 }
 
 OpenGL_Session7::~OpenGL_Session7()
@@ -10,17 +11,17 @@ OpenGL_Session7::~OpenGL_Session7()
 
 void OpenGL_Session7::Start(ApplicationStart* application)
 {
-	// Ô¤±àÒëshader
-	OpenGL_Tools::GetInstance()->CompileShader("Shaders/Session7/Session7_Vertex.shader", "Shaders/Session7/Session7_Fragment.shader", "Session7Shader");
+	// é¢„ç¼–è¯‘shader
+	OpenGL_Tools::GetInstance()->CompileShader("Shaders/Session07/Session7_Vertex.shader", "Shaders/Session07/Session7_Fragment.shader", "Session7Shader");
 	float vertices[] = {
-		// Î»ÖÃ              // ÑÕÉ«
-		 0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   // ÓÒÏÂ
-		-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,   // ×óÏÂ
-		 0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f    // ¶¥²¿
+		// ä½ç½®              // é¢œè‰²
+		 0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   // å³ä¸‹
+		-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,   // å·¦ä¸‹
+		 0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f    // é¡¶éƒ¨
 	};
 
-	unsigned int indices[] = { // ×¢ÒâË÷Òı´Ó0¿ªÊ¼! 
-		0, 1, 2, // µÚÒ»¸öÈı½ÇĞÎ
+	unsigned int indices[] = { // æ³¨æ„ç´¢å¼•ä»0å¼€å§‹! 
+		0, 1, 2, // ç¬¬ä¸€ä¸ªä¸‰è§’å½¢
 	};
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);
@@ -39,11 +40,6 @@ void OpenGL_Session7::Start(ApplicationStart* application)
 
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GL_FLOAT), (void*)(3 * sizeof(GL_FLOAT)));
 	glEnableVertexAttribArray(1);
-}
-void OpenGL_Session7::processInput(GLFWwindow* window)
-{
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		glfwSetWindowShouldClose(window, true);
 }
 void OpenGL_Session7::drawView()
 {

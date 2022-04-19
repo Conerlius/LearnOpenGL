@@ -2,7 +2,7 @@
 
 OpenGL_Session5::OpenGL_Session5()
 {
-	_name = u8"ssss";
+	_name = u8"简单实用 buffer 同课3";
 }
 
 OpenGL_Session5::~OpenGL_Session5()
