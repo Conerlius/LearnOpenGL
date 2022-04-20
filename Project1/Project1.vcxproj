@@ -41,7 +41,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
@@ -156,6 +156,7 @@
     <ClInclude Include="Session08\OpenGL_Session8.h" />
     <ClInclude Include="Session09\OpenGL_Session9.h" />
     <ClInclude Include="Session11\OpenGL_Session11.h" />
+    <ClInclude Include="Session12\OpenGL_Session12.h" />
     <ClInclude Include="SessionMgr.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
@@ -177,6 +178,7 @@
     <ClCompile Include="Session08\OpenGL_Session8.cpp" />
     <ClCompile Include="Session09\OpenGL_Session9.cpp" />
     <ClCompile Include="Session11\OpenGL_Session11.cpp" />
+    <ClCompile Include="Session12\OpenGL_Session12.cpp" />
     <ClCompile Include="SessionMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +201,8 @@
     <Content Include="config.txt" />
     <Content Include="Shaders\Session11\Session11_Vertex.shader" />
     <Content Include="Shaders\Session11\Session11_Fragment.shader" />
+    <Content Include="Shaders\Session12\Session12_Fragment.shader" />
+    <Content Include="Shaders\Session12\Session12_Vertex.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
