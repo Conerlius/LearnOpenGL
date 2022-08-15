@@ -13,9 +13,7 @@ void OpenGL_Session1::Start(ApplicationStart* application)
 	 0.5f, -0.5f, 0.0f,
 	 0.0f,  0.5f, 0.0f
 	};
-	shaderId = OpenGL_Tools::GetInstance()->UseShader("BaseShader");
-	attPos = glGetAttribLocation(shaderId, "aPos");
-
+	attPos = 0;
 	if (Configure::Instance()->EnableOpenGLCore)
 	{
 		glGenVertexArrays(1, &VAO);
@@ -27,14 +25,12 @@ void OpenGL_Session1::Start(ApplicationStart* application)
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 	glVertexAttribPointer(attPos, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray( attPos );
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 }
 // 绘制
 void OpenGL_Session1::drawView() {
 	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
-	glUseProgram(shaderId);
 	// 绘制三角形
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 }
